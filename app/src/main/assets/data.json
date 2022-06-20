@@ -1,0 +1,153 @@
+[{
+ "chapterId": 1,
+ "data": [
+  {
+   "videoId": "1",
+   "title": "第一章 毛泽东思想及其历史地位",
+   "secondTitle": "《秋收起义》",
+   "videoPath": "http://47.100.53.114/course/1.mp4"
+  },
+  {
+   "videoId": "2",
+   "title": "第一章 毛泽东思想及其历史地位",
+   "secondTitle": "《东方红：毛泽东的一生》",
+   "videoPath": "http://47.100.53.114/course/1.mp4"
+  }
+ ]
+},
+ {
+  "chapterId": 2,
+  "data": [
+   {
+    "videoId": "1",
+    "title": "第二章 新民主主义革命理论",
+    "secondTitle": "《小平您好》",
+    "videoPath": "http://47.100.53.114/course/2.mp4"
+   }
+  ]
+ },
+ {
+  "chapterId": 3,
+  "data": [
+   {
+    "videoId": "1",
+    "title": "第三章 社会主义改造理论",
+    "secondTitle": "《永远的小平》",
+    "videoPath": "http://47.100.53.114/course/3.mp4"
+   }
+  ]
+ },
+ {
+  "chapterId": 4,
+  "data": [
+   {
+    "videoId": "1",
+    "title": "第四章 社会主义建设道路初步探索的理论成果",
+    "secondTitle": "《东方红——音乐舞蹈史诗》",
+    "videoPath": "http://47.100.53.114/course/4.mp4"
+   }
+  ]
+ },
+ {
+  "chapterId": 5,
+  "data": [
+   {
+    "videoId": "1",
+    "title": "第五章 邓小平理论",
+    "secondTitle": "邓小平理论的地位与作用",
+    "videoPath": "https://www.icourse163.org/learn/XJTU-1002529011?tid=1461653498#/learn/content?type=detail&id=1238328477"
+   },
+   {
+    "videoId": "2",
+    "title": "第五章 邓小平理论",
+    "secondTitle": "邓小平理论的主题",
+    "videoPath": "https://www.icourse163.org/learn/XJTU-1002529011?tid=1461653498#/learn/content?type=detail&id=1238328476"
+   }
+  ]
+ },
+ {
+  "chapterId": 6,
+  "data": [
+   {
+    "videoId": "1",
+    "title": "第六章 “三个代表”重要思想",
+    "secondTitle": "三个代表”重要思想的形成",
+    "videoPath": ""
+   },
+   {
+    "videoId": "2",
+    "title": "第六章 “三个代表”重要思想",
+    "secondTitle": "三个代表重要思想的历史地位",
+    "videoPath": ""
+   }
+  ]
+ },
+ {
+  "chapterId": 7,
+  "data": [
+   {
+    "videoId": "1",
+    "title": "第七章 科学发展观",
+    "secondTitle": "科学发展观的历史背景与形成历程",
+    "videoPath": ""
+   },
+   {
+    "videoId": "2",
+    "title": "第七章 科学发展观",
+    "secondTitle": " 如何科学评价科学发展观",
+    "videoPath": ""
+   }
+  ]
+ },
+ {
+  "chapterId": 8,
+  "data": [
+   {
+    "videoId": "1",
+    "title": "第八章 习近平新时代中国特色社会主义思想及其历史地位",
+    "secondTitle": "中国特色社会主义进入新时代的主要依据是什么？",
+    "videoPath": ""
+   },
+   {
+    "videoId": "2",
+    "title": "第八章 习近平新时代中国特色社会主义思想及其历史地位",
+    "secondTitle": "习近平新时代中国特色社会主义思想有哪些重大贡献？",
+    "videoPath": ""
+   }
+  ]
+ },
+ {
+  "chapterId": 9,
+  "data": [
+   {
+    "videoId": "1",
+    "title": "第九章 中国特色社会主义总任务 ",
+    "secondTitle": " 中国梦是什么？",
+    "videoPath": ""
+   },
+   {
+    "videoId": "2",
+    "title": "第九章 中国特色社会主义总任务 ",
+    "secondTitle": "如何理解“两步走”的战略安排",
+    "videoPath": ""
+   }
+  ]
+ },
+ {
+  "chapterId": 10,
+  "data": [
+   {
+    "videoId": "1",
+    "title": "第十章 全面深化改革",
+    "secondTitle": "如何发展社会主义民主政治？",
+    "videoPath": ""
+   },
+   {
+    "videoId": "2",
+    "title": "第十章 全面深化改革",
+    "secondTitle": "如何建设美丽中国？",
+    "videoPath": ""
+   }
+  ]
+ }
+]

@@ -22,6 +22,12 @@ public class OwnActivity extends AppCompatActivity implements View.OnClickListen
         findViewById(R.id.btn_xgmes).setOnClickListener(this);
         findViewById(R.id.button_finish).setOnClickListener(this);
 
+
+        findViewById(R.id.im_q).setOnClickListener(this);
+        findViewById(R.id.im_f).setOnClickListener(this);
+        findViewById(R.id.im_o).setOnClickListener(this);
+        findViewById(R.id.im_b).setOnClickListener(this);
+
         TextView tvname = findViewById(R.id.tvname);
         Intent intent = getIntent();
         name = intent.getStringExtra("username");
@@ -46,6 +52,27 @@ public class OwnActivity extends AppCompatActivity implements View.OnClickListen
                 Intent intentf = new Intent(OwnActivity.this,EassyActivity.class);
                 intentf.putExtra("username", name);
                 startActivity(intentf);
+                break;
+            case R.id.im_f:
+                Intent intentff= new Intent(OwnActivity.this,EassyActivity.class);
+                intentff.putExtra("username",name);
+                startActivity(intentff);
+                break;
+            case R.id.im_q:
+                Intent intentq = new Intent(OwnActivity.this,ForumActivity.class);
+                intentq.putExtra("username",name);
+                startActivity(intentq);
+                break;
+            case R.id.im_b:
+                Intent intentb = new Intent(OwnActivity.this,ExercisesDetailActivity.class);
+                intentb.putExtra("username",name);
+                startActivity(intentb);
+
+                break;
+            case R.id.im_o:
+                Intent intento = new Intent(OwnActivity.this,OwnActivity.class);
+                intento.putExtra("username",name);
+                startActivity(intento);
                 break;
         }
 
