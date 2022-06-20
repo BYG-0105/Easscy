@@ -87,7 +87,8 @@
                 android:id="@+id/im_b"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/lx" />
 
             <ImageView
                 android:id="@+id/im_o"

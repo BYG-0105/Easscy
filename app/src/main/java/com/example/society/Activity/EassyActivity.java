@@ -57,7 +57,7 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EassyActivity.this,Datil_mes_Activity.class);
+                Intent intent = new Intent(EassyActivity.this,RecordActivity.class);
                 startActivityForResult(intent,1);
             }
         });
@@ -135,13 +135,8 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
                 finish();
                 break;
-            case R.id.im_f:
-                Intent intentf = new Intent(EassyActivity.this,OwnActivity.class);
-                intentf.putExtra("username",name);
-                startActivity(intentf);
-                break;
             case R.id.im_q:
-                Intent intentq = new Intent(EassyActivity.this,EassyActivity.class);
+                Intent intentq = new Intent(EassyActivity.this,ForumActivity.class);
                 intentq.putExtra("username",name);
                 startActivity(intentq);
                 break;
@@ -151,7 +146,7 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intentb);
                 break;
             case R.id.im_o:
-                Intent intento = new Intent(EassyActivity.this,EassyActivity.class);
+                Intent intento = new Intent(EassyActivity.this,OwnActivity.class);
                 intento.putExtra("username",name);
                 startActivity(intento);
                 break;

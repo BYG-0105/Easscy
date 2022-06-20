@@ -39,7 +39,7 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
-        getSupportActionBar().hide();
+
 
         change = (ImageView)findViewById(R.id.size);
         record = (LinearLayout)findViewById(R.id.record);

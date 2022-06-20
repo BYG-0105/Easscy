@@ -5,8 +5,12 @@
       <map>
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_change_pwd.xml" value="0.10739614994934144" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_easssy.xml" value="0.335" />
-        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_own.xml" value="0.45" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_eassy_mes.xml" value="0.1" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_own.xml" value="0.20601851851851852" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_record.xml" value="0.25" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_register.xml" value="0.10869565217391304" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_start.xml" value="0.10869565217391304" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/eassy_item_layout.xml" value="0.375" />
       </map>
     </option>

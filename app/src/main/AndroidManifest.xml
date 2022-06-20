@@ -19,14 +19,17 @@
         android:theme="@style/Theme.Design.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Activity.ForumActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.StartActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-          </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Activity.Datil_mes_Activity"
             android:exported="true" />
@@ -37,6 +40,9 @@
             android:name=".Activity.EassyActivity"
             android:exported="true" />
         <activity
+            android:name=".Activity.RecordActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.ChangePwdActivity"
             android:exported="true" />
         <activity
@@ -44,9 +50,7 @@
             android:exported="true" />
         <activity
             android:name=".Activity.LoginActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
