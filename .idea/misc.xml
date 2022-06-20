@@ -3,22 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/2021-2022/YDYY/Society/app/src/main/res/layout/activity_change_pwd.xml" value="0.165" />
-        <entry key="..\:/2021-2022/YDYY/Society/app/src/main/res/layout/activity_eassy_mes.xml" value="0.10729166666666666" />
-        <entry key="..\:/2021-2022/YDYY/Society/app/src/main/res/layout/activity_login.xml" value="0.125" />
-        <entry key="..\:/2021-2022/YDYY/Society/app/src/main/res/layout/activity_main.xml" value="0.20625" />
-        <entry key="..\:/2021-2022/YDYY/Society/app/src/main/res/layout/activity_order.xml" value="0.125" />
-        <entry key="..\:/2021-2022/YDYY/Society/app/src/main/res/layout/activity_order_mes.xml" value="0.25" />
-        <entry key="..\:/2021-2022/YDYY/Society/app/src/main/res/layout/activity_own.xml" value="0.11" />
-        <entry key="..\:/2021-2022/YDYY/Society/app/src/main/res/layout/activity_register.xml" value="0.125" />
-        <entry key="..\:/2021-2022/YDYY/Society/app/src/main/res/layout/eassy_item_layout.xml" value="0.10729166666666666" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_change_pwd.xml" value="0.10739614994934144" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_easssy.xml" value="0.335" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_own.xml" value="0.45" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/eassy_item_layout.xml" value="0.375" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

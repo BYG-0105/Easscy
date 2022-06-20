@@ -52,6 +52,16 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.im_o).setOnClickListener(this);
         findViewById(R.id.im_b).setOnClickListener(this);
         initData();
+
+        ImageView add = (ImageView) findViewById(R.id.add);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EassyActivity.this,Datil_mes_Activity.class);
+                startActivityForResult(intent,1);
+            }
+        });
+
     }
     protected void initData()
     {

@@ -67,13 +67,14 @@
                     android:id="@+id/imageView"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
+                    android:background="#CBB6CD"
                     android:src="@drawable/sz" />
 
                 <Button
                     android:id="@+id/btn_xgmm"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:background="#BAA4BD"
+                    android:background="#CBB6CD"
                     android:gravity="left"
                     android:text="修改密码"
                     android:textAllCaps="false"
@@ -91,13 +92,14 @@
                     android:id="@+id/imageView3"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
+                    android:background="#CBB6CD"
                     android:src="@drawable/size" />
 
                 <Button
                     android:id="@+id/btn_xgmes"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:background="#BAA4BD"
+                    android:background="#CBB6CD"
                     android:gravity="left"
                     android:text="修改个人信息"
                     android:textColor="@color/black"
@@ -114,13 +116,14 @@
                     android:id="@+id/imageView4"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
+                    android:background="#CBB6CD"
                     android:src="@drawable/save" />
 
                 <Button
                     android:id="@+id/button_finish"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:background="#BAA4BD"
+                    android:background="#CBB6CD"
                     android:gravity="left"
                     android:text="关闭"
                     android:textColor="@color/black"

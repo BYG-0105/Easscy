@@ -43,7 +43,7 @@ public class OwnActivity extends AppCompatActivity implements View.OnClickListen
                 startActivity(intentmes);
                 break;
             case R.id.button_finish:
-                Intent intentf = new Intent(OwnActivity.this,MainActivity.class);
+                Intent intentf = new Intent(OwnActivity.this,EassyActivity.class);
                 intentf.putExtra("username", name);
                 startActivity(intentf);
                 break;
