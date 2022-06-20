@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 import android.util.Xml;
 import android.widget.ImageView;
 
-import com.example.mycourse.bean.CourseBean;
-import com.example.mycourse.bean.ExercisesBean;
+import com.example.society.Bean.CourseBean;
+import com.example.society.Bean.ExercisesBean;
 import com.example.society.Bean.ExercisesBean;
 
 import org.xmlpull.v1.XmlPullParser;

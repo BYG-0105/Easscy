@@ -40,6 +40,9 @@
             android:name=".Activity.EassyActivity"
             android:exported="true" />
         <activity
+            android:name=".Activity.ExercisesDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.RecordActivity"
             android:exported="true" />
         <activity

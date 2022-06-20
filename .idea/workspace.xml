@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
@@ -17,7 +22,7 @@
     </projectState>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Easscy" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2ApZMykxWQICgyt8kFR36GkJdj3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -32,11 +37,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\2021-2022\YDYY\Society\Easscy\app\src\main\java\com\example\society" />
       <recent name="D:\2021-2022\YDYY\Society\Easscy\app\src\main\res\layout" />
+      <recent name="D:\2021-2022\YDYY\Society\Easscy\app\src\main\res\drawable" />
+      <recent name="D:\2021-2022\YDYY\Society\Easscy\app\src\main\java\com\example\society" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.society.adapter" />
+      <recent name="com.example.society.Bean" />
       <recent name="com.example.society.Activity" />
     </key>
   </component>

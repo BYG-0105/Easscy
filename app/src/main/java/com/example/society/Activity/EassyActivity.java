@@ -2,16 +2,20 @@ package com.example.society.Activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.society.Bean.OrderBean;
 import com.example.society.R;
@@ -31,10 +35,15 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
     ImageView back;
     String name;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_easssy);
+
+
 
         oName = findViewById(R.id.order_name);
         Intent intent = getIntent();
@@ -141,9 +150,10 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intentq);
                 break;
             case R.id.im_b:
-                Intent intentb = new Intent(EassyActivity.this,EassyActivity.class);
+                Intent intentb = new Intent(EassyActivity.this,ExercisesDetailActivity.class);
                 intentb.putExtra("username",name);
                 startActivity(intentb);
+
                 break;
             case R.id.im_o:
                 Intent intento = new Intent(EassyActivity.this,OwnActivity.class);
