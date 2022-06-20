@@ -19,6 +19,12 @@
         android:theme="@style/Theme.Design.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Activity.LtActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.CreateActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.ZyActivity"
             android:exported="true" />
         <activity

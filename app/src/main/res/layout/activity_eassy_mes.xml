@@ -34,27 +34,35 @@
                 android:text="文章主页"
                 android:textColor="#2196F3"
                 android:textSize="28sp" />
+
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/t_time"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#3FADE8"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="背包问题"
+            android:textSize="22sp"
+            android:textStyle="normal|bold|italic" />
 
         <TextView
             android:id="@+id/t_con"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="TextView"
             android:textColor="#3FADE8"
             android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/t_time"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="60dp"
-            android:gravity="center"
-            android:text="TextView"
-            android:textColor="#3FADE8"
-            android:textSize="16sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

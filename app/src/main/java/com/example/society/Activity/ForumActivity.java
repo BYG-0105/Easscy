@@ -58,6 +58,7 @@ public class ForumActivity extends AppCompatActivity implements View.OnClickList
 
 
         findViewById(R.id.back).setOnClickListener(this);
+        findViewById(R.id.add).setOnClickListener(this);
         findViewById(R.id.im_q).setOnClickListener(this);
         findViewById(R.id.im_f).setOnClickListener(this);
         findViewById(R.id.im_o).setOnClickListener(this);
@@ -144,6 +145,12 @@ public class ForumActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent = new Intent(ForumActivity.this,LoginActivity.class);
                 intent.putExtra("username",name);
                 startActivity(intent);
+                finish();
+                break;
+            case R.id.add:
+                Intent intenta = new Intent(ForumActivity.this,CreateActivity.class);
+                intenta.putExtra("username",name);
+                startActivity(intenta);
                 finish();
                 break;
             case R.id.im_q:

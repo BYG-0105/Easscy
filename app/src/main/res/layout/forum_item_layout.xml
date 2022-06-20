@@ -17,6 +17,16 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="#背包问题论坛#"
+                android:textColor="#7138D6"
+                android:textSize="22sp"
+                android:textStyle="normal|bold|italic" />
+
+            <TextView
                 android:id="@+id/item_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -26,8 +36,8 @@
                 android:maxLines="2"
                 android:paddingTop="10dp"
                 android:text="TextView"
-                android:textColor="#8256CF"
-                android:textSize="22sp"
+                android:textColor="#C7AEF4"
+                android:textSize="18sp"
                 android:textStyle="normal|bold|italic" />
 
             <TextView
