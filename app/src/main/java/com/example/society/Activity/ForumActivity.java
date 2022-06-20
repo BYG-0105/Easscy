@@ -2,25 +2,19 @@ package com.example.society.Activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.example.society.Bean.OrderBean;
 import com.example.society.R;
-import com.example.society.adapter.EassyAdapter;
 import com.example.society.adapter.ForumAdapter;
 import com.example.society.database.SQLiteHelper;
 
@@ -43,14 +37,13 @@ public class ForumActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_easssy);
+        setContentView(R.layout.activity_forum);
 
 
 
         oName = findViewById(R.id.order_name);
         Intent intent = getIntent();
         name = intent.getStringExtra("username");
-        oName.setText(name+"的订单");
 
         listView = (ListView) findViewById(R.id.order_listview);
 
@@ -58,18 +51,17 @@ public class ForumActivity extends AppCompatActivity implements View.OnClickList
 
 
         findViewById(R.id.back).setOnClickListener(this);
-        findViewById(R.id.add).setOnClickListener(this);
         findViewById(R.id.im_q).setOnClickListener(this);
         findViewById(R.id.im_f).setOnClickListener(this);
         findViewById(R.id.im_o).setOnClickListener(this);
         findViewById(R.id.im_b).setOnClickListener(this);
         initData();
 
-        ImageView add = (ImageView) findViewById(R.id.add);
+        ImageView add = (ImageView) findViewById(R.id.cea);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ForumActivity.this,RecordActivity.class);
+                Intent intent = new Intent(ForumActivity.this,CreateActivity.class);
                 startActivityForResult(intent,1);
             }
         });
@@ -145,13 +137,12 @@ public class ForumActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent = new Intent(ForumActivity.this,LoginActivity.class);
                 intent.putExtra("username",name);
                 startActivity(intent);
-                finish();
+
                 break;
-            case R.id.add:
-                Intent intenta = new Intent(ForumActivity.this,CreateActivity.class);
-                intenta.putExtra("username",name);
-                startActivity(intenta);
-                finish();
+            case R.id.im_f:
+                Intent intentf = new Intent(ForumActivity.this,EassyActivity.class);
+                intentf.putExtra("username",name);
+                startActivity(intentf);
                 break;
             case R.id.im_q:
                 Intent intentq = new Intent(ForumActivity.this,ForumActivity.class);

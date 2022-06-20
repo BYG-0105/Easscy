@@ -1,0 +1,169 @@
+@startuml
+
+title __ADAPTER's Class Diagram__\n
+
+  namespace com.example.society {
+    namespace adapter {
+      class com.example.society.adapter.EassyAdapter {
+          - layoutInflater : LayoutInflater
+          - list : List<OrderBean>
+          + EassyAdapter()
+          + getCount()
+          + getItem()
+          + getItemId()
+          + getView()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      class com.example.society.adapter.EassyAdapter.ViewHolder {
+          ~ tvOrderContext : TextView
+          ~ tvOrderTime : TextView
+          + ViewHolder()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      class com.example.society.adapter.ExercisesDetailListItemAdapter {
+          - context : Context
+          - layoutInflater : LayoutInflater
+          - objects : List<ExercisesBean>
+          - selectedPosition : ArrayList<String>
+          + ExercisesDetailListItemAdapter()
+          + getItemCount()
+          + getItemId()
+          + onBindViewHolder()
+          + onCreateViewHolder()
+          + setData()
+          + setOnItemListener()
+          - initializeViews()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      interface com.example.society.adapter.ExercisesDetailListItemAdapter.OnItemListener {
+          {abstract} + onItem()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      interface com.example.society.adapter.ExercisesDetailListItemAdapter.OnSelectListener {
+          {abstract} + onSelectA()
+          {abstract} + onSelectB()
+          {abstract} + onSelectC()
+          {abstract} + onSelectD()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      class com.example.society.adapter.ExercisesDetailListItemAdapter.ViewHolder {
+          - ivA : ImageView
+          - ivB : ImageView
+          - ivC : ImageView
+          - ivD : ImageView
+          - tvA : TextView
+          - tvB : TextView
+          - tvC : TextView
+          - tvD : TextView
+          - tvSubject : TextView
+          + ViewHolder()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      class com.example.society.adapter.ExercisesListItemAdapter {
+          - context : Context
+          - layoutInflater : LayoutInflater
+          - objects : List<ExercisesBean>
+          + ExercisesListItemAdapter()
+          + getCount()
+          + getItem()
+          + getItemId()
+          + getView()
+          + setData()
+          + updateView()
+          - initializeViews()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      class com.example.society.adapter.ExercisesListItemAdapter.ViewHolder {
+          - tvContent : TextView
+          - tvOrder : TextView
+          - tvTitle : TextView
+          + ViewHolder()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      class com.example.society.adapter.ForumAdapter {
+          - layoutInflater : LayoutInflater
+          - list : List<OrderBean>
+          + ForumAdapter()
+          + getCount()
+          + getItem()
+          + getItemId()
+          + getView()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      class com.example.society.adapter.ForumAdapter.ViewHolder {
+          ~ tvOrderContext : TextView
+          ~ tvOrderTime : TextView
+          + ViewHolder()
+      }
+    }
+  }
+  
+
+  com.example.society.adapter.EassyAdapter -up-|> android.widget.BaseAdapter
+  com.example.society.adapter.EassyAdapter +-down- com.example.society.adapter.EassyAdapter.ViewHolder
+  com.example.society.adapter.ExercisesDetailListItemAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.example.society.adapter.ExercisesDetailListItemAdapter o-- com.example.society.adapter.ExercisesDetailListItemAdapter.OnItemListener : onItemListener
+  com.example.society.adapter.ExercisesDetailListItemAdapter o-- com.example.society.adapter.ExercisesDetailListItemAdapter.OnSelectListener : onSelectListener
+  com.example.society.adapter.ExercisesDetailListItemAdapter +-down- com.example.society.adapter.ExercisesDetailListItemAdapter.OnItemListener
+  com.example.society.adapter.ExercisesDetailListItemAdapter +-down- com.example.society.adapter.ExercisesDetailListItemAdapter.OnSelectListener
+  com.example.society.adapter.ExercisesDetailListItemAdapter +-down- com.example.society.adapter.ExercisesDetailListItemAdapter.ViewHolder
+  com.example.society.adapter.ExercisesDetailListItemAdapter.ViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.example.society.adapter.ExercisesListItemAdapter -up-|> android.widget.BaseAdapter
+  com.example.society.adapter.ExercisesListItemAdapter +-down- com.example.society.adapter.ExercisesListItemAdapter.ViewHolder
+  com.example.society.adapter.ForumAdapter -up-|> android.widget.BaseAdapter
+  com.example.society.adapter.ForumAdapter +-down- com.example.society.adapter.ForumAdapter.ViewHolder
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

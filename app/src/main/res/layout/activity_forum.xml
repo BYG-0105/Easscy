@@ -31,16 +31,16 @@
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:text="Knapsack"
+                android:text="论坛"
                 android:textColor="@color/white"
                 android:textSize="23sp"
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/add"
+                android:id="@+id/cea"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/add" />
+                app:srcCompat="@drawable/add" />
 
 
         </LinearLayout>

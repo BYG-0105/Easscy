@@ -20,7 +20,8 @@ public class OwnActivity extends AppCompatActivity implements View.OnClickListen
 
         findViewById(R.id.btn_xgmm).setOnClickListener(this);
         findViewById(R.id.btn_xgmes).setOnClickListener(this);
-        findViewById(R.id.button_finish).setOnClickListener(this);
+        findViewById(R.id.btn_zy).setOnClickListener(this);
+        findViewById(R.id.btn_finish).setOnClickListener(this);
 
 
         findViewById(R.id.im_q).setOnClickListener(this);
@@ -48,7 +49,12 @@ public class OwnActivity extends AppCompatActivity implements View.OnClickListen
                 intentmes.putExtra("username",name);
                 startActivity(intentmes);
                 break;
-            case R.id.button_finish:
+            case R.id.btn_zy:
+                Intent intentz = new Intent(OwnActivity.this,ZyActivity.class);
+                intentz.putExtra("username",name);
+                startActivity(intentz);
+                break;
+            case R.id.btn_finish:
                 Intent intentf = new Intent(OwnActivity.this,EassyActivity.class);
                 intentf.putExtra("username", name);
                 startActivity(intentf);

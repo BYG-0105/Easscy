@@ -57,9 +57,9 @@
         <TextView
             android:id="@+id/t_con"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="500dp"
+            android:layout_margin="15dp"
             android:layout_marginTop="10dp"
-            android:gravity="center"
             android:text="TextView"
             android:textColor="#3FADE8"
             android:textSize="20sp" />

@@ -1,0 +1,285 @@
+@startuml
+
+title __ACTIVITY's Class Diagram__\n
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.ChangePwdActivity {
+          ~ namess : String
+          - back : ImageView
+          - btnfinish : Button
+          - btnxg : Button
+          - name : EditText
+          - num : EditText
+          - pwd : EditText
+          + showToast()
+          # onCreate()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.CreateActivity {
+          ~ name : String
+          + onClick()
+          # onCreate()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.Datil_mes_Activity {
+          # onCreate()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.EassyActivity {
+          ~ back : ImageView
+          ~ list : List<OrderBean>
+          ~ listView : ListView
+          ~ name : String
+          - oName : TextView
+          + onClick()
+          + showToast()
+          # initData()
+          # onCreate()
+          - showQueryData()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.ExercisesDetailActivity {
+          + ff : int
+          - ebl : List<ExercisesBean>
+          - id : int
+          - rv_list : RecyclerView
+          - score : int
+          {static} - text_time : TextView
+          {static} - time : TimeCount
+          - title : String
+          - title_bar : RelativeLayout
+          - tv_back : TextView
+          - tv_di : TextView
+          - tv_main_title : TextView
+          - tv_save : TextView
+          # onCreate()
+          - initData()
+          - initTime()
+          - initView()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.ExercisesDetailActivity.PlaceholderFragment {
+          + PlaceholderFragment()
+          + onCreate()
+          + onCreateView()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.ExercisesDetailActivity.TimeCount {
+          + TimeCount()
+          + onFinish()
+          + onTick()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.ForumActivity {
+          ~ back : ImageView
+          ~ list : List<OrderBean>
+          ~ listView : ListView
+          ~ name : String
+          - oName : TextView
+          + onClick()
+          + showToast()
+          # initData()
+          # onCreate()
+          - showQueryData()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.LoginActivity {
+          - auto : CheckBox
+          - btnlogin : Button
+          - btnmm : Button
+          - btnzc : Button
+          - finish : Button
+          - mima : CheckBox
+          - name : EditText
+          - pwd : EditText
+          + onClick()
+          + showToast()
+          # onCreate()
+          - initview()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.LtActivity {
+          # onCreate()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.OwnActivity {
+          ~ name : String
+          + onClick()
+          # onCreate()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.RecordActivity {
+          ~ change : ImageView
+          ~ content : EditText
+          ~ delete : ImageView
+          ~ iconbackground : int
+          ~ id : String
+          ~ noteName : TextView
+          ~ note_back : ImageView
+          ~ note_save : ImageView
+          ~ note_time : TextView
+          ~ record : LinearLayout
+          ~ textSize : int
+          - icons : int[]
+          - text : int[]
+          + onClick()
+          + showToast()
+          # initData()
+          # onCreate()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.RegisterActivity {
+          ~ uGender : String
+          - age : TextView
+          - btn_cancal : Button
+          - btn_register : Button
+          - city : TextView
+          - num : TextView
+          - radioGroup : RadioGroup
+          - styleString : List<String>
+          - stylegd : CheckBox
+          - stylehy : CheckBox
+          - styleom : CheckBox
+          - styleyg : CheckBox
+          - username : EditText
+          - userpwd : EditText
+          + initview()
+          + showToast()
+          # onCreate()
+          - checkBoxlis()
+          - initmes()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.StartActivity {
+          # onCreate()
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.ZyActivity {
+          # onCreate()
+      }
+    }
+  }
+  
+
+  com.example.society.Activity.ChangePwdActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.ChangePwdActivity o-- com.example.society.database.SQLiteHelper.User : userSql
+  com.example.society.Activity.ChangePwdActivity o-- com.example.society.database.MD5Utils : md5Utils
+  com.example.society.Activity.ChangePwdActivity o-- com.example.society.database.SQLiteHelper : sqLiteHelper
+  com.example.society.Activity.CreateActivity .up.|> android.view.View.OnClickListener
+  com.example.society.Activity.CreateActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.Datil_mes_Activity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.EassyActivity .up.|> android.view.View.OnClickListener
+  com.example.society.Activity.EassyActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.EassyActivity o-- com.example.society.adapter.EassyAdapter : adapter
+  com.example.society.Activity.EassyActivity o-- com.example.society.database.SQLiteHelper.Eassy : order
+  com.example.society.Activity.EassyActivity o-- com.example.society.database.SQLiteHelper : sQliteHelper
+  com.example.society.Activity.ExercisesDetailActivity -up-|> android.app.Activity
+  com.example.society.Activity.ExercisesDetailActivity o-- com.example.society.adapter.ExercisesDetailListItemAdapter : adapter
+  com.example.society.Activity.ExercisesDetailActivity +-down- com.example.society.Activity.ExercisesDetailActivity.PlaceholderFragment
+  com.example.society.Activity.ExercisesDetailActivity +-down- com.example.society.Activity.ExercisesDetailActivity.TimeCount
+  com.example.society.Activity.ExercisesDetailActivity.PlaceholderFragment -up-|> android.app.Fragment
+  com.example.society.Activity.ExercisesDetailActivity.TimeCount -up-|> android.os.CountDownTimer
+  com.example.society.Activity.ForumActivity .up.|> android.view.View.OnClickListener
+  com.example.society.Activity.ForumActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.ForumActivity o-- com.example.society.adapter.ForumAdapter : adapter
+  com.example.society.Activity.ForumActivity o-- com.example.society.database.SQLiteHelper.Eassy : order
+  com.example.society.Activity.ForumActivity o-- com.example.society.database.SQLiteHelper : sQliteHelper
+  com.example.society.Activity.LoginActivity .up.|> android.view.View.OnClickListener
+  com.example.society.Activity.LoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.LoginActivity o-- com.example.society.database.SQLiteHelper : sQliteHelper
+  com.example.society.Activity.LoginActivity o-- com.example.society.database.SQLiteHelper.User : userSql
+  com.example.society.Activity.LoginActivity o-- com.example.society.database.MD5Utils : md5Utils
+  com.example.society.Activity.LtActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.OwnActivity .up.|> android.view.View.OnClickListener
+  com.example.society.Activity.OwnActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.RecordActivity .up.|> android.view.View.OnClickListener
+  com.example.society.Activity.RecordActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.RecordActivity o-- com.example.society.database.SQLiteHelper.Eassy : eassy
+  com.example.society.Activity.RecordActivity o-- com.example.society.database.SQLiteHelper : mSQLiteHelper
+  com.example.society.Activity.RegisterActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.RegisterActivity o-- com.example.society.database.SQLiteHelper.User : UsersqLiteHelper
+  com.example.society.Activity.RegisterActivity o-- com.example.society.database.MD5Utils : md5Utils
+  com.example.society.Activity.RegisterActivity o-- com.example.society.database.SQLiteHelper : sqLiteHelper
+  com.example.society.Activity.StartActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.ZyActivity -up-|> androidx.appcompat.app.AppCompatActivity
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -59,14 +59,14 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
     protected void initData()
     {
         mSQLiteHelper = new SQLiteHelper(this);
-        noteName.setText("添加记录");
+        noteName.setText("发布文章");
         Intent intent = getIntent();
         if(intent != null)
         {
             id = intent.getStringExtra("id");
             if(id !=  null)
             {
-                noteName.setText("修改记录");
+                noteName.setText("修改文章");
                 content.setText(intent.getStringExtra("content"));
                 note_time.setText(intent.getStringExtra("time"));
                 note_time.setVisibility(View.VISIBLE);

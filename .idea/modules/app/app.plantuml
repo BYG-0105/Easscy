@@ -1,0 +1,289 @@
+@startuml
+
+title __SOCIETY.APP's Class Diagram__\n
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.ChangePwdActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.CreateActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.Datil_mes_Activity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.EassyActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.ExercisesDetailActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.ForumActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.LoginActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.LtActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.OwnActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.RecordActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.RegisterActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.StartActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Activity {
+      class com.example.society.Activity.ZyActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Bean {
+      class com.example.society.Bean.CourseBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Bean {
+      class com.example.society.Bean.ExercisesBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Bean {
+      class com.example.society.Bean.Loginuser {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace Bean {
+      class com.example.society.Bean.OrderBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    class com.example.society.BuildConfig {
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      class com.example.society.adapter.EassyAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      class com.example.society.adapter.ExercisesDetailListItemAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      class com.example.society.adapter.ExercisesListItemAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace adapter {
+      class com.example.society.adapter.ForumAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace database {
+      class com.example.society.database.DBinformation {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace database {
+      class com.example.society.database.MD5Utils {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace database {
+      class com.example.society.database.SQLiteHelper {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace utils {
+      class com.example.society.utils.AnalysisUtils {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace utils {
+      class com.example.society.utils.MD5Utils {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace utils {
+      class com.example.society.utils.MySqlUtils {
+      }
+    }
+  }
+  
+
+  namespace com.example.society {
+    namespace utils {
+      class com.example.society.utils.SQLiteHelper {
+      }
+    }
+  }
+  
+
+  com.example.society.Activity.ChangePwdActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.ChangePwdActivity o-- com.example.society.database.SQLiteHelper.User : userSql
+  com.example.society.Activity.ChangePwdActivity o-- com.example.society.database.MD5Utils : md5Utils
+  com.example.society.Activity.ChangePwdActivity o-- com.example.society.database.SQLiteHelper : sqLiteHelper
+  com.example.society.Activity.CreateActivity .up.|> android.view.View.OnClickListener
+  com.example.society.Activity.CreateActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.Datil_mes_Activity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.EassyActivity .up.|> android.view.View.OnClickListener
+  com.example.society.Activity.EassyActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.EassyActivity o-- com.example.society.adapter.EassyAdapter : adapter
+  com.example.society.Activity.EassyActivity o-- com.example.society.database.SQLiteHelper.Eassy : order
+  com.example.society.Activity.EassyActivity o-- com.example.society.database.SQLiteHelper : sQliteHelper
+  com.example.society.Activity.ExercisesDetailActivity -up-|> android.app.Activity
+  com.example.society.Activity.ExercisesDetailActivity o-- com.example.society.adapter.ExercisesDetailListItemAdapter : adapter
+  com.example.society.Activity.ForumActivity .up.|> android.view.View.OnClickListener
+  com.example.society.Activity.ForumActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.ForumActivity o-- com.example.society.adapter.ForumAdapter : adapter
+  com.example.society.Activity.ForumActivity o-- com.example.society.database.SQLiteHelper.Eassy : order
+  com.example.society.Activity.ForumActivity o-- com.example.society.database.SQLiteHelper : sQliteHelper
+  com.example.society.Activity.LoginActivity .up.|> android.view.View.OnClickListener
+  com.example.society.Activity.LoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.LoginActivity o-- com.example.society.database.SQLiteHelper : sQliteHelper
+  com.example.society.Activity.LoginActivity o-- com.example.society.database.SQLiteHelper.User : userSql
+  com.example.society.Activity.LoginActivity o-- com.example.society.database.MD5Utils : md5Utils
+  com.example.society.Activity.LtActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.OwnActivity .up.|> android.view.View.OnClickListener
+  com.example.society.Activity.OwnActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.RecordActivity .up.|> android.view.View.OnClickListener
+  com.example.society.Activity.RecordActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.RecordActivity o-- com.example.society.database.SQLiteHelper.Eassy : eassy
+  com.example.society.Activity.RecordActivity o-- com.example.society.database.SQLiteHelper : mSQLiteHelper
+  com.example.society.Activity.RegisterActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.RegisterActivity o-- com.example.society.database.SQLiteHelper.User : UsersqLiteHelper
+  com.example.society.Activity.RegisterActivity o-- com.example.society.database.MD5Utils : md5Utils
+  com.example.society.Activity.RegisterActivity o-- com.example.society.database.SQLiteHelper : sqLiteHelper
+  com.example.society.Activity.StartActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.Activity.ZyActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.society.adapter.EassyAdapter -up-|> android.widget.BaseAdapter
+  com.example.society.adapter.ExercisesDetailListItemAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.example.society.adapter.ExercisesDetailListItemAdapter o-- com.example.society.adapter.ExercisesDetailListItemAdapter.OnItemListener : onItemListener
+  com.example.society.adapter.ExercisesDetailListItemAdapter o-- com.example.society.adapter.ExercisesDetailListItemAdapter.OnSelectListener : onSelectListener
+  com.example.society.adapter.ExercisesListItemAdapter -up-|> android.widget.BaseAdapter
+  com.example.society.adapter.ForumAdapter -up-|> android.widget.BaseAdapter
+  com.example.society.database.SQLiteHelper -up-|> android.database.sqlite.SQLiteOpenHelper
+  com.example.society.utils.SQLiteHelper -up-|> android.database.sqlite.SQLiteOpenHelper
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -2,20 +2,16 @@ package com.example.society.Activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.example.society.Bean.OrderBean;
 import com.example.society.R;
@@ -48,7 +44,7 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
         oName = findViewById(R.id.order_name);
         Intent intent = getIntent();
         name = intent.getStringExtra("username");
-        oName.setText(name+"的订单");
+
 
         listView = (ListView) findViewById(R.id.order_listview);
 
