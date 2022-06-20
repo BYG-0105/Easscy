@@ -9,5 +9,65 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"></LinearLayout>
+        android:background="@drawable/img"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="100dp"
+            android:gravity="center"
+            android:text="创建你的论坛"
+            android:textColor="#B394EA"
+            android:textSize="34sp"
+            android:textStyle="normal|bold|italic" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="论坛名称"
+            android:textColor="#976FDF"
+            android:textSize="24sp"
+            android:textStyle="normal|bold|italic" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="请输入论坛名称" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="论坛简介"
+            android:textColor="#976FDF"
+            android:textSize="24sp"
+            android:textStyle="normal|bold|italic" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="请输入论坛介绍" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#9FA8DA"
+            android:text="完成" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
