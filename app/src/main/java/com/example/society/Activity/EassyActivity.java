@@ -25,7 +25,7 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
     ListView listView;
     List<OrderBean> list;
     SQLiteHelper sQliteHelper;
-    SQLiteHelper.Order order = new SQLiteHelper.Order();
+    SQLiteHelper.Eassy order = new SQLiteHelper.Eassy();
     EassyAdapter adapter;
     private TextView oName;
     ImageView back;

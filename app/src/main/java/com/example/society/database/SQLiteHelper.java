@@ -178,10 +178,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         }
     }
 
-    public static class Order  {
+    public static class Eassy {
 
 
-        public Order() {
+        public Eassy() {
 
         }
 

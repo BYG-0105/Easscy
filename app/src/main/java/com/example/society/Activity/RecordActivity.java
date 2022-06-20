@@ -13,8 +13,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.notepad.Utils.DBUtils;
-import com.example.notepad.database.SQLiteHelper;
+import com.example.society.R;
+import com.example.society.database.DBinformation;
+import com.example.society.database.SQLiteHelper;
 
 public class RecordActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -32,6 +33,7 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
     private int[] text = {20,25,30,35,40,45};
     int iconbackground = 1;
     int textSize = 0;
+    SQLiteHelper.Eassy eassy = new SQLiteHelper.Eassy();
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +79,8 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
         switch (view.getId())
         {
             case R.id.note_back:
-                finish();
+                 Intent intent = new Intent(RecordActivity.this,EassyActivity.class);
+                 startActivity(intent);
                 break;
             case R.id.delete:
                 content.setText("");
@@ -88,7 +91,7 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
                 {
                     if(noteContent.length()>0)
                     {
-                        if(mSQLiteHelper.updateData(id,noteContent, DBUtils.getTime()))
+                        if(eassy.updateData(id,noteContent, DBinformation.getTime()))
                         {
                             showToast("修改成功");
                             setResult(2);
@@ -108,7 +111,7 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
                 {
                     if(noteContent.length()>0)
                     {
-                        if(mSQLiteHelper.insertData(noteContent,DBUtils.getTime()))
+                        if(eassy.insertData(noteContent,DBinformation.getTime()))
                         {
                             showToast("保存成功");
                             setResult(2);
