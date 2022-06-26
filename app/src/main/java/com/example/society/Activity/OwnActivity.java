@@ -22,7 +22,7 @@ public class OwnActivity extends AppCompatActivity implements View.OnClickListen
         findViewById(R.id.btn_xgmes).setOnClickListener(this);
         findViewById(R.id.btn_zy).setOnClickListener(this);
         findViewById(R.id.btn_finish).setOnClickListener(this);
-
+        findViewById(R.id.btn_zygl).setOnClickListener(this);
 
         findViewById(R.id.im_q).setOnClickListener(this);
         findViewById(R.id.im_f).setOnClickListener(this);
@@ -49,6 +49,11 @@ public class OwnActivity extends AppCompatActivity implements View.OnClickListen
                 intentmes.putExtra("username",name);
                 startActivity(intentmes);
                 break;
+            case R.id.btn_zygl:
+                Intent intentmzy = new Intent(OwnActivity.this,FileMangeActivity.class);
+                intentmzy.putExtra("username",name);
+                startActivity(intentmzy);
+                break;
             case R.id.btn_zy:
                 Intent intentz = new Intent(OwnActivity.this,ZyActivity.class);
                 intentz.putExtra("username",name);
@@ -70,7 +75,7 @@ public class OwnActivity extends AppCompatActivity implements View.OnClickListen
                 startActivity(intentq);
                 break;
             case R.id.im_b:
-                Intent intentb = new Intent(OwnActivity.this,ExercisesDetailActivity.class);
+                Intent intentb = new Intent(OwnActivity.this,EaxmActivity.class);
                 intentb.putExtra("username",name);
                 startActivity(intentb);
 

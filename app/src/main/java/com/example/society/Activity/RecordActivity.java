@@ -1,8 +1,17 @@
 package com.example.society.Activity;
 
+import android.app.Activity;
+import android.app.Dialog;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -27,6 +36,7 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
     SQLiteHelper mSQLiteHelper;
     TextView noteName;
     ImageView change;
+    ImageView imgeassy,imgadd;
     String id;
     LinearLayout record;
     private int[] icons = {R.drawable.sun,R.drawable.blue,R.drawable.green,R.drawable.check,R.drawable.white,R.drawable.black};
@@ -34,13 +44,15 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
     int iconbackground = 1;
     int textSize = 0;
     SQLiteHelper.Eassy eassy = new SQLiteHelper.Eassy();
-    
+    String name;
+    String picPath ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
 
-
+        Intent intent = getIntent();
+        name = intent.getStringExtra("username");
         change = (ImageView)findViewById(R.id.size);
         record = (LinearLayout)findViewById(R.id.record);
         note_back = (ImageView) findViewById(R.id.note_back);
@@ -48,11 +60,15 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
         content = (EditText) findViewById(R.id.note_content);
         delete = (ImageView) findViewById(R.id.delete);
         note_save = (ImageView) findViewById(R.id.note_save);
+        imgeassy = (ImageView) findViewById(R.id.img_eassy);
+        imgadd = (ImageView) findViewById(R.id.imgadd);
         noteName = (TextView) findViewById(R.id.note_name);
         change.setOnClickListener(this);
         note_back.setOnClickListener(this);
         delete.setOnClickListener(this);
         note_save.setOnClickListener(this);
+        imgadd.setOnClickListener(this);
+
         initData();
 
     }
@@ -80,7 +96,14 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
         {
             case R.id.note_back:
                  Intent intent = new Intent(RecordActivity.this,EassyActivity.class);
+                intent.putExtra("username",name);
                  startActivity(intent);
+                break;
+            case R.id.imgadd:
+                Intent intentimg = new Intent();
+                intentimg.setType("image/*");
+                intentimg.setAction(Intent.ACTION_PICK);
+                startActivityForResult(intentimg, 1);
                 break;
             case R.id.delete:
                 content.setText("");
@@ -91,11 +114,14 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
                 {
                     if(noteContent.length()>0)
                     {
-                        if(eassy.updateData(id,noteContent, DBinformation.getTime()))
+                        if(eassy.updateData(id,name,picPath,noteContent, DBinformation.getTime()))
                         {
+
                             showToast("修改成功");
-                            setResult(2);
-                            finish();
+                            Intent intentx = new Intent(RecordActivity.this,EassyActivity.class);
+                            intentx.putExtra("username",name);
+                            startActivity(intentx);
+
                         }
                         else
                         {
@@ -111,11 +137,14 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
                 {
                     if(noteContent.length()>0)
                     {
-                        if(eassy.insertData(noteContent,DBinformation.getTime()))
+                        if(eassy.insertData(name,picPath,noteContent,DBinformation.getTime()))
                         {
+
                             showToast("保存成功");
-                            setResult(2);
-                            finish();
+                            Intent intentx = new Intent(RecordActivity.this,EassyActivity.class);
+                            intentx.putExtra("username",name);
+                            startActivity(intentx);
+
                         }
                         else
                         {
@@ -209,5 +238,61 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
     public void showToast(String message)
     {
         Toast.makeText(RecordActivity.this,message,Toast.LENGTH_LONG).show();
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode== Activity.RESULT_OK)
+        {
+            /**
+             * 当选择的图片不为空的话，在获取到图片的途径
+             */
+            Uri uri = data.getData();
+
+            try {
+                String[] pojo = {MediaStore.Images.Media.DATA};
+
+                Cursor cursor = managedQuery(uri, pojo, null, null,null);
+                if(cursor!=null)
+                {
+                    ContentResolver cr = this.getContentResolver();
+                    int colunm_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+
+                    cursor.moveToFirst();
+                    String path = cursor.getString(colunm_index);
+
+                    /***
+                     * 这里加这样一个推断主要是为了第三方的软件选择，比方：使用第三方的文件管理器的话，你选择的文件就不一定是图片了，这种话，我们推断文件的后缀名
+                     * 假设是图片格式的话，那么才干够
+                     */
+                    if(path.endsWith("jpg")||path.endsWith("png"))
+                    {
+                        picPath = path;
+                        Bitmap bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
+                        imgeassy.setImageBitmap(bitmap);
+                    }else{alert();}
+                }else{alert();}
+
+            } catch (Exception e) {
+            }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+    private void alert()
+    {
+        Dialog dialog = new android.app.AlertDialog.Builder(this)
+                .setTitle("提示")
+                .setMessage("您选择的不是有效的图片")
+                .setPositiveButton("确定",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int which) {
+                                picPath = null;
+                            }
+                        })
+                .create();
+        dialog.show();
     }
 }

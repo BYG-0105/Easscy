@@ -6,9 +6,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
+import android.util.Log;
 
+import com.example.society.Bean.Eassy;
 import com.example.society.Bean.Loginuser;
-import com.example.society.Bean.OrderBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,11 +40,37 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 + DBinformation.USERS_AGE+" varchar(64),"
                 + DBinformation.USERS_NUM+" varchar(64),"
                 + DBinformation.USERS_GENDER+" varchar(64),"
+                + DBinformation.USERS_IMGPATH+" varchar(255),"
                 + DBinformation.USERS_STYLE+" varchar(64))");
 
-        sqLiteDatabase.execSQL("create table if not exists "+DBinformation.DATABASE_ORDERTABLE
-                +" ("+ DBinformation.ORDER_ID+" integer primary key autoincrement,"+
-                DBinformation.ORDER_CONTENT+" text,"+DBinformation.ORDER_TIME+" text)");
+        sqLiteDatabase.execSQL("create table if not exists "+DBinformation.DATABASE_EASSYTABLE
+                +" ("+ DBinformation.EASSY_ID+" integer primary key autoincrement,"
+                + DBinformation.EASSY_AUTHORNAME+" text,"
+                + DBinformation.EASSY_IMGPATH+" text,"
+                + DBinformation.EASSY_CONTENT+" text,"
+                +DBinformation.EASSY_TIME+" text)");
+
+        sqLiteDatabase.execSQL("create table if not exists "+DBinformation.DATABASE_FORUMTABLE
+                +" ("+ DBinformation.FORUM_ID+" integer primary key autoincrement,"
+                +  DBinformation.FORUM_NAME+" text,"
+                +  DBinformation.FORUM_CONTENT+" text,"
+                +  DBinformation.FORUM_AUTHOR+" text,"
+                +  DBinformation.FORUM_IMGPATH+" text,"
+                +DBinformation.FORUM_TIME+" text)");
+
+        sqLiteDatabase.execSQL("create table if not exists "+DBinformation.DATABASE_FILETABLE
+                +" ("+ DBinformation.FILE_ID+" integer primary key autoincrement,"
+                +  DBinformation.FILE_NAME+" text,"
+                +  DBinformation.FILE_AUTHOR+" text,"
+                +  DBinformation.FILE_PATH+" text,"
+                +DBinformation.FILE_TIME+" text)");
+
+        sqLiteDatabase.execSQL("create table if not exists "+DBinformation.DATABASE_COMMENTTABLE
+                +" ("+ DBinformation.COMMENT_ID+" integer primary key autoincrement,"
+                +  DBinformation.COMMENT_AUTHORNAME+" text,"
+                +  DBinformation.COMMENT_FORUMNAME+" text,"
+                +  DBinformation.COMMENT_CONTENT+" text,"
+                +  DBinformation.COMMENT_TIME+" text)");
     }
 
 
@@ -77,6 +105,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                         @SuppressLint("Range") String gender = cursor.getString(cursor.getColumnIndex(DBinformation.USERS_GENDER));
                         @SuppressLint("Range") String style = cursor.getString(cursor.getColumnIndex(DBinformation.USERS_STYLE));
                         @SuppressLint("Range") String age = cursor.getString(cursor.getColumnIndex(DBinformation.USERS_AGE));
+                        @SuppressLint("Range") String imgpath = cursor.getString(cursor.getColumnIndex(DBinformation.USERS_IMGPATH));
                         loginuser.setId(id);
                         loginuser.setName(uname);
                         loginuser.setPwd(pwd);
@@ -85,6 +114,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                         loginuser.setGender(gender);
                         loginuser.setStyle(style);
                         loginuser.setAge(age);
+                        loginuser.setImgpath(imgpath);
                         break;
                     }
                 }
@@ -95,7 +125,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         }
 
         //添加数据
-        public boolean insertData(String username,String userpwd,String city,String age,String gender,String style,String num)
+        public boolean insertData(String username,String userpwd,String city,String age,String gender,String style,String num,String imgpath)
         {
 
             ContentValues contentValues = new ContentValues();
@@ -106,6 +136,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             contentValues.put(DBinformation.USERS_GENDER, gender);
             contentValues.put(DBinformation.USERS_STYLE, style);
             contentValues.put(DBinformation.USERS_NUM, num);
+            contentValues.put(DBinformation.USERS_IMGPATH, imgpath);
             return sqLiteDatabase.insert(DBinformation.DATABASE_LOGINTABLE, null, contentValues) > 0;
         }
 
@@ -129,7 +160,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         }
 
         //修改个人信息
-        public boolean updatemesData(String id,String username,String userpwd,String city,String age,String gender,String style,String num)
+        public boolean updatemesData(String id,String username,String userpwd,String city,String age,String gender,String style,String num,String imgpath)
         {
             ContentValues contentValues = new ContentValues();
             contentValues.put(DBinformation.USERS_NAME,username);
@@ -139,6 +170,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             contentValues.put(DBinformation.USERS_GENDER, gender);
             contentValues.put(DBinformation.USERS_STYLE, style);
             contentValues.put(DBinformation.USERS_NUM, num);
+            contentValues.put(DBinformation.USERS_IMGPATH, imgpath);
             String sql = DBinformation.USERS_ID+"=?";
             String[] strings = new String[]{id};
             return sqLiteDatabase.update(DBinformation.DATABASE_LOGINTABLE,contentValues,sql,strings)>0;
@@ -178,6 +210,111 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         }
     }
 
+    public static class Comment {
+
+
+        public Comment() {
+
+        }
+
+        //添加数据
+        public boolean insertData(String forumname,String authorname,String content,String time)
+        {
+
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(DBinformation.COMMENT_FORUMNAME, forumname);
+            contentValues.put(DBinformation.COMMENT_AUTHORNAME, authorname);
+            contentValues.put(DBinformation.COMMENT_CONTENT, content);
+            contentValues.put(DBinformation.COMMENT_TIME, time);
+            return sqLiteDatabase.insert(DBinformation.DATABASE_COMMENTTABLE, null, contentValues) > 0;
+        }
+
+        //删除数据
+        public boolean deleteData (String id)
+        {
+            String sql = DBinformation.COMMENT_ID+"=?";
+            String[] contentValuesArray = new String[]{String.valueOf(id)};
+            return sqLiteDatabase.delete(DBinformation.DATABASE_COMMENTTABLE,sql,contentValuesArray)>0;
+        }
+
+        //修改
+        public boolean updateData(String id,String forumname,String authorname,String content,String time)
+        {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(DBinformation.COMMENT_FORUMNAME, forumname);
+            contentValues.put(DBinformation.COMMENT_AUTHORNAME, authorname);
+            contentValues.put(DBinformation.COMMENT_CONTENT, content);
+            contentValues.put(DBinformation.COMMENT_TIME, time);
+            String sql = DBinformation.COMMENT_ID+"=?";
+            String[] strings = new String[]{id};
+            return sqLiteDatabase.update(DBinformation.DATABASE_COMMENTTABLE,contentValues,sql,strings)>0;
+        }
+
+        //查询数据
+        public List<com.example.society.Bean.Comment> query()
+        {
+            List<com.example.society.Bean.Comment> list = new ArrayList<com.example.society.Bean.Comment>();
+            Cursor cursor = sqLiteDatabase.query(DBinformation.DATABASE_COMMENTTABLE,null,null,null,null,null,DBinformation.COMMENT_ID+" desc");
+            if (cursor != null)
+            {
+                while (cursor.moveToNext())
+                {
+                    com.example.society.Bean.Comment  comment= new com.example.society.Bean.Comment();
+                    @SuppressLint("Range") String id = String.valueOf(cursor.getColumnIndex(DBinformation.COMMENT_ID));
+                    @SuppressLint("Range") String forumname = cursor.getString(cursor.getColumnIndex(DBinformation.COMMENT_FORUMNAME));
+                    @SuppressLint("Range") String authorname = cursor.getString(cursor.getColumnIndex(DBinformation.COMMENT_AUTHORNAME));
+                    @SuppressLint("Range") String content = cursor.getString(cursor.getColumnIndex(DBinformation.COMMENT_CONTENT));
+                    @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DBinformation.COMMENT_TIME));
+                    comment.setId(id);
+                    comment.setAuthorname(authorname);
+                    comment.setForumname(forumname);
+                    comment.setContent(content);
+                    comment.setTime(time);
+                    list.add(comment);
+                }
+                cursor.close();
+            }
+            return list;
+        }
+
+
+        //查询单个数据
+        public com.example.society.Bean.Comment userquery(String name)
+        {
+            com.example.society.Bean.Comment comment = null;
+            Cursor cursor = sqLiteDatabase.query(DBinformation.DATABASE_COMMENTTABLE,null,null,null,null,null,DBinformation.COMMENT_ID+" desc");
+            if (cursor != null)
+            {
+                while (cursor.moveToNext())
+                {
+
+                    @SuppressLint("Range") String forumname = cursor.getString(cursor.getColumnIndex(DBinformation.COMMENT_FORUMNAME));
+
+                    if(name.equals(forumname))
+                    {
+                        comment= new com.example.society.Bean.Comment();
+                        @SuppressLint("Range") String id = String.valueOf(cursor.getInt(cursor.getColumnIndex(DBinformation.COMMENT_ID)));
+                        @SuppressLint("Range") String authorname = cursor.getString(cursor.getColumnIndex(DBinformation.COMMENT_AUTHORNAME));
+                        @SuppressLint("Range") String content = cursor.getString(cursor.getColumnIndex(DBinformation.COMMENT_CONTENT));
+                        @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DBinformation.COMMENT_TIME));
+                        comment.setId(id);
+                        comment.setAuthorname(authorname);
+                        comment.setForumname(forumname);
+                        comment.setContent(content);
+                        comment.setTime(time);
+
+                        break;
+                    }
+                }
+                cursor.close();
+            }
+            //Log.i("pwd",loginuser.toString());
+            return comment;
+        }
+    }
+
+
+
     public static class Eassy {
 
 
@@ -186,58 +323,310 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         }
 
         //添加数据
-        public boolean insertData(String content,String time)
+        public boolean insertData(String author,String imgpath,String content,String time)
         {
 
             ContentValues contentValues = new ContentValues();
-            contentValues.put(DBinformation.ORDER_CONTENT, content);
-            contentValues.put(DBinformation.ORDER_TIME, time);
-            return sqLiteDatabase.insert(DBinformation.DATABASE_ORDERTABLE, null, contentValues) > 0;
+            contentValues.put(DBinformation.EASSY_AUTHORNAME, author);
+            contentValues.put(DBinformation.EASSY_IMGPATH, imgpath);
+            contentValues.put(DBinformation.EASSY_CONTENT, content);
+            contentValues.put(DBinformation.EASSY_TIME, time);
+            Log.d("Easssy： ", " " + author + "asdadad"+imgpath);
+            return sqLiteDatabase.insert(DBinformation.DATABASE_EASSYTABLE, null, contentValues) > 0;
         }
 
         //删除数据
         public boolean deleteData (String id)
         {
-            String sql = DBinformation.USERS_ID+"=?";
+            String sql = DBinformation.EASSY_ID+"=?";
             String[] contentValuesArray = new String[]{String.valueOf(id)};
-            return sqLiteDatabase.delete(DBinformation.DATABASE_ORDERTABLE,sql,contentValuesArray)>0;
+            return sqLiteDatabase.delete(DBinformation.DATABASE_EASSYTABLE,sql,contentValuesArray)>0;
         }
 
         //修改
-        public boolean updateData(String id,String content,String time)
+        public boolean updateData(String id,String author,String imgpath,String content,String time)
         {
             ContentValues contentValues = new ContentValues();
-            contentValues.put(DBinformation.ORDER_CONTENT,content);
-            contentValues.put(DBinformation.ORDER_TIME,time);
-            String sql = DBinformation.USERS_ID+"=?";
+            contentValues.put(DBinformation.EASSY_AUTHORNAME, author);
+            contentValues.put(DBinformation.EASSY_IMGPATH, imgpath);
+            contentValues.put(DBinformation.EASSY_CONTENT,content);
+            contentValues.put(DBinformation.EASSY_TIME,time);
+            String sql = DBinformation.EASSY_ID+"=?";
             String[] strings = new String[]{id};
-            return sqLiteDatabase.update(DBinformation.DATABASE_ORDERTABLE,contentValues,sql,strings)>0;
+            return sqLiteDatabase.update(DBinformation.DATABASE_EASSYTABLE,contentValues,sql,strings)>0;
         }
 
         //查询数据
-        public List<OrderBean> query()
+        public List<com.example.society.Bean.Eassy> query()
         {
-            List<OrderBean> list = new ArrayList<OrderBean>();
-            Cursor cursor = sqLiteDatabase.query(DBinformation.DATABASE_ORDERTABLE,null,null,null,null,null,DBinformation.ORDER_ID+" desc");
+            List<com.example.society.Bean.Eassy> list = new ArrayList<com.example.society.Bean.Eassy>();
+            Cursor cursor = sqLiteDatabase.query(DBinformation.DATABASE_EASSYTABLE,null,null,null,null,null,DBinformation.EASSY_ID+" desc");
             if (cursor != null)
             {
                 while (cursor.moveToNext())
                 {
-                    OrderBean orderBean = new OrderBean();
-                    @SuppressLint("Range") String id = String.valueOf(cursor.getInt(cursor.getColumnIndex(DBinformation.USERS_ID)));
-                    @SuppressLint("Range") String content = cursor.getString(cursor.getColumnIndex(DBinformation.ORDER_CONTENT));
-                    @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DBinformation.ORDER_TIME));
-                    orderBean.setId(id);
-                    orderBean.setContent(content);
-                    orderBean.setTime(time);
-                    list.add(orderBean);
+                    com.example.society.Bean.Eassy eassy = new com.example.society.Bean.Eassy();
+                    @SuppressLint("Range") String id = String.valueOf(cursor.getInt(cursor.getColumnIndex(DBinformation.EASSY_ID)));
+                    @SuppressLint("Range") String author = cursor.getString(cursor.getColumnIndex(DBinformation.EASSY_AUTHORNAME));
+                    @SuppressLint("Range") String imgpath = cursor.getString(cursor.getColumnIndex(DBinformation.EASSY_IMGPATH));
+                    @SuppressLint("Range") String content = cursor.getString(cursor.getColumnIndex(DBinformation.EASSY_CONTENT));
+                    @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DBinformation.EASSY_TIME));
+                    eassy.setId(id);
+                    eassy.setAuthor(author);
+                    eassy.setImgpath(imgpath);
+                    eassy.setContent(content);
+                    eassy.setTime(time);
+                    list.add(eassy);
                 }
                 cursor.close();
             }
             return list;
         }
+
+        //查询单个数据
+        public com.example.society.Bean.Eassy userquery(String times)
+        {
+            com.example.society.Bean.Eassy eassy = null;
+            Cursor cursor = sqLiteDatabase.query(DBinformation.DATABASE_EASSYTABLE,null,null,null,null,null,DBinformation.EASSY_ID+" desc");
+            if (cursor != null)
+            {
+                while (cursor.moveToNext())
+                {
+
+                    @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DBinformation.EASSY_TIME));
+
+                    if(time.equals(times))
+                    {
+                        eassy = new com.example.society.Bean.Eassy();
+                        @SuppressLint("Range") String id = cursor.getString(cursor.getColumnIndex(DBinformation.EASSY_ID));
+                        @SuppressLint("Range") String author = cursor.getString(cursor.getColumnIndex(DBinformation.EASSY_AUTHORNAME));
+                        @SuppressLint("Range") String imgpath = cursor.getString(cursor.getColumnIndex(DBinformation.EASSY_IMGPATH));
+                        @SuppressLint("Range") String content = cursor.getString(cursor.getColumnIndex(DBinformation.EASSY_CONTENT));
+                        eassy.setId(id);
+                        eassy.setAuthor(author);
+                        eassy.setImgpath(imgpath);
+                        eassy.setContent(content);
+                        eassy.setTime(time);
+
+                        break;
+                    }
+                }
+                cursor.close();
+            }
+            //Log.i("pwd",loginuser.toString());
+            return eassy;
+        }
     }
 
+    public static class Forum {
+
+
+        public Forum() {
+
+        }
+
+        //添加数据
+        public boolean insertData(String forumauthor,String forumname,String forumcomment,String forumimgpath,String time)
+        {
+
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(DBinformation.FORUM_AUTHOR, forumauthor);
+            contentValues.put(DBinformation.FORUM_NAME, forumname);
+            contentValues.put(DBinformation.FORUM_IMGPATH, forumimgpath);
+            contentValues.put(DBinformation.FORUM_CONTENT, forumcomment);
+            contentValues.put(DBinformation.FORUM_TIME, time);
+            return sqLiteDatabase.insert(DBinformation.DATABASE_FORUMTABLE, null, contentValues) > 0;
+        }
+
+        //删除数据
+        public boolean deleteData (String id)
+        {
+            String sql = DBinformation.FORUM_ID+"=?";
+            String[] contentValuesArray = new String[]{String.valueOf(id)};
+            return sqLiteDatabase.delete(DBinformation.DATABASE_FORUMTABLE,sql,contentValuesArray)>0;
+        }
+
+        //修改
+        public boolean updateData(String id,String forumauthor,String forumname,String forumcomment,String forumimgpath,String time)
+        {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(DBinformation.FORUM_AUTHOR, forumauthor);
+            contentValues.put(DBinformation.FORUM_NAME, forumname);
+            contentValues.put(DBinformation.FORUM_IMGPATH, forumimgpath);
+            contentValues.put(DBinformation.FORUM_CONTENT, forumcomment);
+            contentValues.put(DBinformation.FORUM_TIME, time);
+            String sql = DBinformation.FORUM_ID+"=?";
+            String[] strings = new String[]{id};
+            return sqLiteDatabase.update(DBinformation.DATABASE_FORUMTABLE,contentValues,sql,strings)>0;
+        }
+
+        //查询数据
+        public List<com.example.society.Bean.Forum> query()
+        {
+            List<com.example.society.Bean.Forum> list = new ArrayList<com.example.society.Bean.Forum>();
+            Cursor cursor = sqLiteDatabase.query(DBinformation.DATABASE_FORUMTABLE,null,null,null,null,null,DBinformation.FORUM_ID+" desc");
+            if (cursor != null)
+            {
+                while (cursor.moveToNext())
+                {
+                    com.example.society.Bean.Forum forum = new com.example.society.Bean.Forum();
+                    @SuppressLint("Range") String id = String.valueOf(cursor.getInt(cursor.getColumnIndex(DBinformation.FORUM_ID)));
+                    @SuppressLint("Range") String forumname = cursor.getString(cursor.getColumnIndex(DBinformation.FORUM_NAME));
+                    @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DBinformation.FORUM_TIME));
+                    @SuppressLint("Range") String foruming = cursor.getString(cursor.getColumnIndex(DBinformation.FORUM_IMGPATH));
+                    @SuppressLint("Range") String forumcon = cursor.getString(cursor.getColumnIndex(DBinformation.FORUM_CONTENT));
+                    @SuppressLint("Range") String forumauthor = cursor.getString(cursor.getColumnIndex(DBinformation.FORUM_AUTHOR));
+                    forum.setId(id);
+                    forum.setForumname(forumname);
+                    forum.setTime(time);
+                    forum.setForumcomment(forumcon);
+                    forum.setForumimgpath(foruming);
+                    forum.setForumauthor(forumauthor);
+                    list.add(forum);
+                }
+                cursor.close();
+            }
+            return list;
+        }
+        //查询单个数据
+        public com.example.society.Bean.Forum userquery(String name)
+        {
+            com.example.society.Bean.Forum forum= null;
+            Cursor cursor = sqLiteDatabase.query(DBinformation.DATABASE_FORUMTABLE,null,null,null,null,null,DBinformation.FORUM_ID+" desc");
+            if (cursor != null)
+            {
+                while (cursor.moveToNext())
+                {
+
+                    @SuppressLint("Range") String names = cursor.getString(cursor.getColumnIndex(DBinformation.FORUM_NAME));
+
+                    if(names.equals(name))
+                    {
+                        forum = new com.example.society.Bean.Forum();
+                        @SuppressLint("Range") String id = String.valueOf(cursor.getInt(cursor.getColumnIndex(DBinformation.FORUM_ID)));
+                        @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DBinformation.FORUM_TIME));
+                        @SuppressLint("Range") String foruming = cursor.getString(cursor.getColumnIndex(DBinformation.FORUM_IMGPATH));
+                        @SuppressLint("Range") String forumcon = cursor.getString(cursor.getColumnIndex(DBinformation.FORUM_CONTENT));
+                        @SuppressLint("Range") String forumauthor = cursor.getString(cursor.getColumnIndex(DBinformation.FORUM_AUTHOR));
+                        forum.setId(id);
+                        forum.setForumname(name);
+                        forum.setTime(time);
+                        forum.setForumcomment(forumcon);
+                        forum.setForumimgpath(foruming);
+                        forum.setForumauthor(forumauthor);
+
+                        break;
+                    }
+                }
+                cursor.close();
+            }
+            //Log.i("pwd",loginuser.toString());
+            return forum;
+        }
+    }
+
+    public static class File {
+
+
+        public File() {
+
+        }
+
+        //添加数据
+        public boolean insertData(String name,String author,String path,String time)
+        {
+
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(DBinformation.FILE_NAME, name);
+            contentValues.put(DBinformation.FILE_AUTHOR, author);
+            contentValues.put(DBinformation.FILE_PATH, path);
+            contentValues.put(DBinformation.FILE_TIME, time);
+            return sqLiteDatabase.insert(DBinformation.DATABASE_FILETABLE, null, contentValues) > 0;
+        }
+
+        //删除数据
+        public boolean deleteData (String id)
+        {
+            String sql = DBinformation.FILE_ID+"=?";
+            String[] contentValuesArray = new String[]{String.valueOf(id)};
+            return sqLiteDatabase.delete(DBinformation.DATABASE_FILETABLE,sql,contentValuesArray)>0;
+        }
+
+        //修改
+        public boolean updateData(String id,String name,String author,String path,String time)
+        {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(DBinformation.FILE_PATH,path);
+            contentValues.put(DBinformation.FILE_NAME, name);
+            contentValues.put(DBinformation.FILE_AUTHOR, author);
+            contentValues.put(DBinformation.FILE_TIME,time);
+            String sql = DBinformation.FILE_ID+"=?";
+            String[] strings = new String[]{id};
+            return sqLiteDatabase.update(DBinformation.DATABASE_FILETABLE,contentValues,sql,strings)>0;
+        }
+
+        //查询数据
+        public List<com.example.society.Bean.File> query()
+        {
+            List<com.example.society.Bean.File> list = new ArrayList<com.example.society.Bean.File>();
+            Cursor cursor = sqLiteDatabase.query(DBinformation.DATABASE_FILETABLE,null,null,null,null,null,DBinformation.FILE_ID+" desc");
+            if (cursor != null)
+            {
+                while (cursor.moveToNext())
+                {
+                    com.example.society.Bean.File file = new com.example.society.Bean.File();
+                    @SuppressLint("Range") String id = String.valueOf(cursor.getInt(cursor.getColumnIndex(DBinformation.FILE_ID)));
+                    @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(DBinformation.FILE_NAME));
+                    @SuppressLint("Range") String author = cursor.getString(cursor.getColumnIndex(DBinformation.FILE_AUTHOR));
+                    @SuppressLint("Range") String path = cursor.getString(cursor.getColumnIndex(DBinformation.FILE_PATH));
+                    @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DBinformation.FILE_TIME));
+                    file.setId(id);
+                    file.setPath(path);
+                    file.setTime(time);
+                    file.setName(name);
+                    file.setAuthor(author);
+                    list.add(file);
+                }
+                cursor.close();
+            }
+            return list;
+        }
+
+
+        //查询单个数据
+        public com.example.society.Bean.File userquery(String times)
+        {
+            com.example.society.Bean.File file= null;
+            Cursor cursor = sqLiteDatabase.query(DBinformation.DATABASE_FILETABLE,null,null,null,null,null,DBinformation.FILE_ID+" desc");
+            if (cursor != null)
+            {
+                while (cursor.moveToNext())
+                {
+
+                    @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DBinformation.FILE_TIME));
+
+                    if(time.equals(times))
+                    {
+                        file = new com.example.society.Bean.File();
+                        @SuppressLint("Range") String id = cursor.getString(cursor.getColumnIndex(DBinformation.FILE_ID));
+                        @SuppressLint("Range") String author = cursor.getString(cursor.getColumnIndex(DBinformation.FILE_AUTHOR));
+                        @SuppressLint("Range") String imgpath = cursor.getString(cursor.getColumnIndex(DBinformation.FILE_PATH));
+                        @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(DBinformation.FILE_NAME));
+                        file.setId(id);
+                        file.setAuthor(author);
+                        file.setPath(imgpath);
+                        file.setName(name);
+                        file.setTime(time);
+
+                        break;
+                    }
+                }
+                cursor.close();
+            }
+            //Log.i("pwd",loginuser.toString());
+            return file;
+        }
+    }
 
 
 }

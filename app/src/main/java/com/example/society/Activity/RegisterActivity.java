@@ -1,11 +1,23 @@
 package com.example.society.Activity;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,7 +47,9 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView city;
     private TextView age;
     private TextView num;
+    private ImageView imgAuthor;
     private MD5Utils md5Utils;
+    private String picPath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +103,7 @@ public class RegisterActivity extends AppCompatActivity {
                     {
                         showToast("账号，密码，电话号码为必填项，请重新填写！！！");
                     }
-                    else if(UsersqLiteHelper.userquery(name) == null && UsersqLiteHelper.insertData(name,pwd,citys,ages,uGender,styleString.toString(),nums))
+                    else if(UsersqLiteHelper.userquery(name) == null && UsersqLiteHelper.insertData(name,pwd,citys,ages,uGender,styleString.toString(),nums,picPath))
                     {
                         showToast("注册成功！");
                         Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
@@ -105,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
                 {
                     Loginuser loginuser = UsersqLiteHelper.userquery(name);
                     String id = loginuser.getId();
-                    if(UsersqLiteHelper.updatemesData(id,name,pwd,citys,ages,uGender,styleString.toString(),nums))
+                    if(UsersqLiteHelper.updatemesData(id,name,pwd,citys,ages,uGender,styleString.toString(),nums,picPath))
                     {
                         showToast("修改成功！");
 
@@ -145,6 +159,70 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        imgAuthor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_PICK);
+                startActivityForResult(intent, 1);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode== Activity.RESULT_OK)
+        {
+            /**
+             * 当选择的图片不为空的话，在获取到图片的途径
+             */
+            Uri uri = data.getData();
+            try {
+                String[] pojo = {MediaStore.Images.Media.DATA};
+
+                Cursor cursor = managedQuery(uri, pojo, null, null,null);
+                if(cursor!=null)
+                {
+                    ContentResolver cr = this.getContentResolver();
+                    int colunm_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+
+                    cursor.moveToFirst();
+                    String path = cursor.getString(colunm_index);
+                    /***
+                     * 这里加这样一个推断主要是为了第三方的软件选择，比方：使用第三方的文件管理器的话，你选择的文件就不一定是图片了，这种话，我们推断文件的后缀名
+                     * 假设是图片格式的话，那么才干够
+                     */
+                    if(path.endsWith("jpg")||path.endsWith("png"))
+                    {
+                        picPath = path;
+                        Bitmap bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
+                        imgAuthor.setImageBitmap(bitmap);
+                    }else{alert();}
+                }else{alert();}
+
+            } catch (Exception e) {
+            }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void alert()
+    {
+        Dialog dialog = new AlertDialog.Builder(this)
+                .setTitle("提示")
+                .setMessage("您选择的不是有效的图片")
+                .setPositiveButton("确定",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int which) {
+                                picPath = null;
+                            }
+                        })
+                .create();
+        dialog.show();
     }
 
     private void initmes(String name) {
@@ -171,6 +249,7 @@ public class RegisterActivity extends AppCompatActivity {
         city = (TextView)findViewById(R.id.etCity);
         age = (TextView) findViewById(R.id.etAge);
         num = (TextView) findViewById(R.id.etNum);
+        imgAuthor = (ImageView) findViewById(R.id.img_author);
 
     }
     private void checkBoxlis() {

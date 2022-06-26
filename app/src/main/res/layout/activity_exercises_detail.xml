@@ -38,11 +38,11 @@
         android:divider="@null"/>-->
     <TextView
         android:id="@+id/tv_di"
-        android:text="第一页"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textColor="@android:color/black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="请认真答题"
+        android:textColor="@color/purple_200"
+        android:textSize="20sp" />
 
 </LinearLayout>

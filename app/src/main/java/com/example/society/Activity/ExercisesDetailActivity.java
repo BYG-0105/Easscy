@@ -2,6 +2,7 @@ package com.example.society.Activity;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -46,6 +47,7 @@ public class ExercisesDetailActivity extends Activity {
 
     private static TextView text_time = null;
     private static TimeCount time;
+    private String namess;
     //注册计时器
     class TimeCount extends CountDownTimer {
         public TimeCount(long millisInFuture, long countDownInterval) {
@@ -78,6 +80,9 @@ public class ExercisesDetailActivity extends Activity {
         initData();
         initView();
         initTime(savedInstanceState);
+
+        Intent intent = getIntent();
+        namess = intent.getStringExtra("username");
     }
 
     private void initTime(Bundle savedInstanceState) {

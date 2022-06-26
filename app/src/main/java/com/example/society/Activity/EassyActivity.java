@@ -1,7 +1,10 @@
 package com.example.society.Activity;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,8 +15,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
-import com.example.society.Bean.OrderBean;
+import com.example.society.Bean.Eassy;
 import com.example.society.R;
 import com.example.society.adapter.EassyAdapter;
 import com.example.society.database.SQLiteHelper;
@@ -23,9 +28,9 @@ import java.util.List;
 public class EassyActivity extends AppCompatActivity implements View.OnClickListener {
 
     ListView listView;
-    List<OrderBean> list;
+    List<Eassy> list;
     SQLiteHelper sQliteHelper;
-    SQLiteHelper.Eassy order = new SQLiteHelper.Eassy();
+    SQLiteHelper.Eassy eassy = new SQLiteHelper.Eassy();
     EassyAdapter adapter;
     private TextView oName;
     ImageView back;
@@ -47,7 +52,7 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
 
 
         listView = (ListView) findViewById(R.id.order_listview);
-
+        showQueryData();
 
 
 
@@ -63,9 +68,13 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(EassyActivity.this,RecordActivity.class);
+                intent.putExtra("username",name);
                 startActivityForResult(intent,1);
             }
         });
+
+
+
 
     }
     protected void initData()
@@ -75,7 +84,7 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                OrderBean orderBean = list.get(position);
+                Eassy orderBean = list.get(position);
                 Intent intent = new Intent(EassyActivity.this, Datil_mes_Activity.class);
                 intent.putExtra("content",orderBean.getContent());
                 intent.putExtra("time",orderBean.getTime());
@@ -92,8 +101,8 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int which) {
-                                OrderBean orderBean = list.get(position);
-                                if(order.deleteData(orderBean.getId()))
+                                Eassy orderBean = list.get(position);
+                                if(eassy.deleteData(orderBean.getId()))
                                 {
                                     list.remove(position);
                                     adapter.notifyDataSetChanged();
@@ -120,7 +129,7 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
             list.clear();
 
         }
-        list = order.query();
+        list = eassy.query();
         adapter = new EassyAdapter(this,list);
         listView.setAdapter(adapter);
 
@@ -146,7 +155,7 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intentq);
                 break;
             case R.id.im_b:
-                Intent intentb = new Intent(EassyActivity.this,ExercisesDetailActivity.class);
+                Intent intentb = new Intent(EassyActivity.this,EaxmActivity.class);
                 intentb.putExtra("username",name);
                 startActivity(intentb);
 

@@ -1,7 +1,14 @@
 package com.example.society.Activity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,11 +16,15 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.society.Bean.Loginuser;
 import com.example.society.R;
 import com.example.society.database.MD5Utils;
 import com.example.society.database.SQLiteHelper;
+
+import java.io.File;
 
 public class ChangePwdActivity extends AppCompatActivity {
 
@@ -21,7 +32,7 @@ public class ChangePwdActivity extends AppCompatActivity {
     private Button btnxg,btnfinish;
     private SQLiteHelper sqLiteHelper;
     SQLiteHelper.User userSql = new SQLiteHelper.User();
-    private ImageView back;
+    private ImageView back,authorimg;
     String namess;
     private MD5Utils md5Utils ;
     @Override
@@ -35,10 +46,27 @@ public class ChangePwdActivity extends AppCompatActivity {
         btnxg = (Button)findViewById(R.id.btn_c);
         btnfinish = (Button) findViewById(R.id.btn_f);
         back = (ImageView)findViewById(R.id.back);
+        authorimg = (ImageView)findViewById(R.id.img_aut);
         num = (EditText)findViewById(R.id.e_lxfs);
 
         Intent intent = getIntent();
         namess = intent.getStringExtra("username");
+
+        if(userSql.userquery(namess) != null)
+        {
+            Loginuser loginuser = userSql.userquery(namess);
+            String path = loginuser.getImgpath();
+            if(path != null)
+            {
+                Bitmap bitmap = getImgFromDesc(path);
+                authorimg.setImageBitmap(bitmap);
+            }
+            else
+            {
+                authorimg.setImageResource(R.drawable.bb);
+            }
+
+        }
 
         btnxg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,5 +159,46 @@ public class ChangePwdActivity extends AppCompatActivity {
     public void showToast(String message)
     {
         Toast.makeText(ChangePwdActivity.this,message,Toast.LENGTH_LONG).show();
+    }
+
+    //根据路径获取图片
+    private Bitmap getImgFromDesc(String path) {
+        Bitmap bm = null;
+        File file = new File(path);
+        // 动态申请权限
+        String[] permissions = {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA};
+        final int REQUEST_CODE = 10001;
+
+        // 版本判断。当手机系统大于 23 时，才有必要去判断权限是否获取
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            // 检查该权限是否已经获取
+
+            for (String permission : permissions) {
+                //  GRANTED---授权  DINIED---拒绝
+                if (ContextCompat.checkSelfPermission(getApplicationContext(), permission) == PackageManager.PERMISSION_DENIED) {
+                    ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE);
+                }
+            }
+        }
+
+        boolean permission_readStorage = (ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED);
+        boolean permission_camera = (ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED);
+        Log.d("ImgActivity:", "getImageFromDesc: \n");
+        Log.d("ImgActivity: ", "readPermission: " + permission_readStorage + "\n");
+        Log.d("ImgActivity： ", "cameraPermission: " + permission_camera + "\n");
+
+        if(file.exists()) {
+            bm = BitmapFactory.decodeFile(path);
+        } else {
+
+            Toast.makeText(ChangePwdActivity.this,"该图片不存在！",Toast.LENGTH_LONG).show();
+            Log.d("ImgActivity ", "getImgFromDesc: 该图片不存在！");
+        }
+        return bm;
     }
 }

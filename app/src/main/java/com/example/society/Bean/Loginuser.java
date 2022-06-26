@@ -1,8 +1,11 @@
 package com.example.society.Bean;
 
+import android.net.Uri;
+
 public class Loginuser {
     private String  id;
     private String name;
+    private String imgpath;
     private String pwd;
     private String city;
     private String age;
@@ -24,6 +27,14 @@ public class Loginuser {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImgpath() {
+        return imgpath;
+    }
+
+    public void setImgpath(String imgpath) {
+        this.imgpath = imgpath;
     }
 
     public String getPwd() {

@@ -19,6 +19,18 @@
         android:theme="@style/Theme.Design.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Activity.EaxmActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.ForumDatilActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.FileMangeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.FileGrazeActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.LtActivity"
             android:exported="true" />
         <activity
@@ -47,6 +59,9 @@
             android:exported="true" />
         <activity
             android:name=".Activity.EassyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.FileActivity"
             android:exported="true" />
         <activity
             android:name=".Activity.ExercisesDetailActivity"

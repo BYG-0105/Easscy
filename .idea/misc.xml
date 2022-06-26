@@ -3,6 +3,37 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/drawable/go_back_selector.xml" value="0.22135416666666666" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_change_pwd.xml" value="0.335" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_create.xml" value="0.13949275362318841" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_easssy.xml" value="0.10643115942028986" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_eassy_mes.xml" value="0.25" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_eaxm.xml" value="0.165" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_exercises_detail.xml" value="0.25" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_file.xml" value="0.1" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_file_graze.xml" value="0.25" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_file_mange.xml" value="0.13360507246376813" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_filedatil.xml" value="0.13360507246376813" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_forum.xml" value="0.15081521739130435" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_forum_datil.xml" value="0.165" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_login.xml" value="0.13360507246376813" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_lt.xml" value="0.15081521739130435" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_own.xml" value="0.375" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_record.xml" value="0.25" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_register.xml" value="0.335" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_sczy.xml" value="0.25" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_start.xml" value="0.11231884057971014" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/activity_zy.xml" value="0.11231884057971014" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/comment_item.xml" value="0.25" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/eassy_item_layout.xml" value="0.25" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/exercises_detail_list_item.xml" value="0.13360507246376813" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/exercises_list_item.xml" value="0.13360507246376813" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/file_graze_item.xml" value="0.25" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/file_item.xml" value="0.335" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/forum_item_layout.xml" value="0.335" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/fragment_exercises.xml" value="0.12409420289855072" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/fragment_time.xml" value="0.15081521739130435" />
+        <entry key="..\:/2021-2022/9/Easscy-main/app/src/main/res/layout/main_title_bar.xml" value="0.12409420289855072" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_change_pwd.xml" value="0.10739614994934144" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_create.xml" value="0.25" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_easssy.xml" value="0.165" />

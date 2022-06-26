@@ -5,6 +5,10 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
@@ -52,13 +56,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="layoutResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="2ApZMykxWQICgyt8kFR36GkJdj3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -69,23 +81,34 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../KS/android-development-team-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../YDYY/KS/android-development-team-master" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.-1217993964">
+      <recent name="com.example.society.Activity" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\2021-2022\9\Easscy-main\app\src\main\res\layout" />
+      <recent name="D:\2021-2022\9\Easscy-main\app\src\main\java\com\example\society\Bean" />
       <recent name="D:\2021-2022\YDYY\Society\Easscy\app\src\main\res\drawable" />
       <recent name="D:\2021-2022\YDYY\Society\Easscy\app\src\main\res\layout" />
       <recent name="D:\2021-2022\YDYY\Society\Easscy\app\src\main" />
-      <recent name="D:\2021-2022\YDYY\Society\Easscy\app\src\main\java\com\example\society" />
     </key>
     <key name="android.template.377077365">
       <recent name="com.example.society.Activity" />
     </key>
+    <key name="android.template.1865309754">
+      <recent name="com.example.society.Activity" />
+    </key>
+    <key name="android.template.-1398455736">
+      <recent name="com.example.society.Activity" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.society.adapter" />
+      <recent name="com.example.society.utils" />
       <recent name="com.example.society.Bean" />
       <recent name="com.example.society.Activity" />
+      <recent name="com.example.society.adapter" />
     </key>
   </component>
   <component name="RunManager">

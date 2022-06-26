@@ -1,7 +1,10 @@
 package com.example.society.Activity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +13,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.society.Bean.Loginuser;
 import com.example.society.R;
@@ -27,12 +32,30 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
     SQLiteHelper.User userSql = new SQLiteHelper.User();
     private CheckBox mima,auto;
     private MD5Utils md5Utils;
-
+    String autname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // 动态申请权限
+        String[] permissions = {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA};
+        final int REQUEST_CODE = 10001;
+
+        // 版本判断。当手机系统大于 23 时，才有必要去判断权限是否获取
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            // 检查该权限是否已经获取
+
+            for (String permission : permissions) {
+                //  GRANTED---授权  DINIED---拒绝
+                if (ContextCompat.checkSelfPermission(getApplicationContext(), permission) == PackageManager.PERMISSION_DENIED) {
+                    ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE);
+                }
+            }
+        }
         initview();
 
         //临时存放密码SharedPreferences
@@ -49,6 +72,7 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
             {
                 name.setText(nameinfo);
                 pwd.setText(pwdinfo);
+                autname = nameinfo;
             }
             else
             {
@@ -62,7 +86,9 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
             {
                 name.setText(nameinfo);
                 pwd.setText(pwdinfo);
+                autname = nameinfo;
                 Intent intent1 = new Intent(LoginActivity.this, EassyActivity.class);
+                intent1.putExtra("username", autname);
                 startActivity(intent1);
             }
             else
@@ -147,10 +173,12 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
                 break;
             case R.id.btn_zc:
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+
                 startActivity(intent);
                 break;
             case R.id.btn_mm:
                 Intent intent1 = new Intent(LoginActivity.this, ChangePwdActivity.class);
+                intent1.putExtra("username", autname);
                 startActivity(intent1);
                 break;
             case R.id.of:
