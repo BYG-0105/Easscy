@@ -5,166 +5,193 @@
 
 -<exercises id="1">
 
-<subject>1.党的（ ）确立了和平与发展是当今世界的两大主题这一深刻论断。</subject>
+  <subject>1.有如下程序段:
+    For i=1 To 2
+    For j=1 To 6一i
+    lf a(j)<a(j+1
+     Then=""
+ k="a(j)": a(j)=""a(j+1):a(j十1)="k"
+     End="" If=""
+  Next="" j=""
+Next="" i=""
+数组元素a(1)到a(6)的值依次为“71,54,58,29,31,78”,经过该程序段“加工”后﹐数组元素。</subject>
 
-<a>十一届三中全会</a>
+  <a>29,31.,54,58,71,78</a>
 
-<b>十二大</b>
+  <b>78,71,58,54,31,29</b>
 
-<c>十三大</c>
+  <c>54,29,31,58,71,78</c>
 
-<d>十五大</d>
+  <d>71,58,54,78,31,29</d>
 
-<answer>3</answer>
+  <answer>1</answer>
 
 </exercises>
 
 
 -<exercises id="2">
 
-<subject>2.和平与发展是时代的主题，和平与发展的核心问题是（ ）。</subject>
+  <subject>2.有一个数组,采用冒泡排序,第一遍排序后的结果为:4,10,5,32,6,7,9,17,24那么该数组的原始顺序不可能的是</subject>
 
-<a>南北问题</a>
+  <a>10,5,32,6,7,9,17,24,4</a>
 
-<b>维护世界和平问题</b>
+  <b>10,5,32,6,7,9,4,17,24</b>
 
-<c>反对霸权主义、强权政治问题</c>
+  <c>10,5,32,4,6,7,9,17,24</c>
 
-<d>实建立国际经济政治新秩序问题</d>
+  <d>4,10,5,32,6,7,9,17,24</d>
 
-<answer>1</answer>
-
+  <answer>4</answer>
+  
 </exercises>
 
 
 -<exercises id="3">
 
-<subject>3.经济全球化的根本动力是（ ）。</subject>
+  <subject>3.某VB程序段如下:
+    i=1
+    Do While i<=3
+    k =i
+    j=i+1
+    Do While j<=5
+    If a(j)<a(k) Then="" k="j"
+      j = "i+1"
+    Loop=""
+    if="" i=""<>k Then t=a(i):a(i)-a(k):a(k)==t
+    i=i+1
+    Loop
+    数组元素a(1)到a(5)的值依次为“17,87,36,22,45”,则该程序段运行后,数组元素 a(1)到a(5)的数据依次是
+  </subject>
 
-<a>资本的扩张</a>
+  <a>87,45,36,17,22</a>
 
-<b>科技革命和生产力的发展</b>
+  <b>17,22,36,45,87</b>
 
-<c>资本主义自身的发展</c>
+  <c>17,22,36,87,45</c>
 
-<d>政治统治的需求</d>
+  <d>87,45,17,36,22</d>
 
-<answer>2</answer>
-
+  <answer>2</answer>
+  
 </exercises>
 
 
 -<exercises id="4">
 
-<subject>4.经济全球化在本质上是（ ）。</subject>
+  <subject>4.背包问题是由谁发表的一篇论文而诞生的？</subject>
 
-<a>新科技革命的推动 </a>
+  <a>徐小平</a>
 
-<b>生产要素在全球范围内的优化组合</b>
+  <b>V神</b>
 
-<c>资本的跨国流动和资本的国际循环与周转</c>
+  <c>中本聪</c>
 
-<d>是少数西方发达国家推动的结果</d>
+  <d>尼科萨博</d>
 
-<answer>3</answer>
+  <answer>3</answer>
 
 </exercises>
 
 
 -<exercises id="5">
 
-<subject>5.中国坚定不移地奉行独立自主的和平外交政策（ ）。</subject>
+  <subject>5.关于背包问题以下说法正确的是？</subject>
 
-<a>是同旧中国的屈辱外交彻底决裂的决心决定的</a>
+  <a>单—的新技术</a>
 
-<b>是由我国的社会主义性质和在国际上的地位决定的</b>
+  <b>新型加密技术</b>
 
-<c>是根据新中国成立初期美国对中国实行孤立、封锁和禁运决定的</c>
+  <c>绝对安全的存储模式</c>
 
-<d>是反对美苏两个超级大国推行霸权主义政策决定的</d>
+  <d>背包问题中的智能合约非合同</d>
 
-<answer>2</answer>
+  <answer>1</answer>
 
-</exercises>
-
--<exercises id="6">
-
-<subject>6.和平共处五项原则（ ）。</subject>
-
-<a>仅适用于社会制度相同的国家 </a>
-
-<b>仅适用于国家间的政治关系</b>
-
-<c>仅适用于国家间的经济关系</c>
-
-<d>概括了国际关系的基本准则</d>
-
-<answer>4</answer>
 
 </exercises>
 
--<exercises id="7">
+  -<exercises id="6">
 
-<subject>7.树立新的安全观念的核心是（ ）。</subject>
+    <subject>6.关于0/1背包问题，以下描述正确的是（ ）。</subject>
 
-<a>以军事联盟为基础</a>
+    <a>可以使用贪心算法找到最优解</a>
 
-<b>以加强军备为手段</b>
+    <b>能找到多项式时间的有效算法 </b>
 
-<c>互信、互利、平等和协作</c>
+    <c>使用教材介绍的动态规划方法可求解任意0－1背包问题</c>
 
-<d>防范和打击恐怖活动</d>
+    <d>对于同一背包与相同的物品，背包问题取得的总价值一定大于等于做0/1背包问题</d>
 
-<answer>3</answer>
+    <answer>4</answer>
 
-</exercises>
+  </exercises>
 
--<exercises id="8">
 
-<subject>8.首先提出建设持久和平与共同繁荣的和谐世界的是（ ）。</subject>
+  -<exercises id="7">
 
-<a>毛泽东</a>
+    <subject>7.下面问题(   )不能使用贪心法解决。</subject>
 
-<b>邓小平</b>
+    <a>单源最短路径问题    </a>
 
-<c>江泽民</c>
+    <b>N皇后问题</b>
 
-<d>胡锦涛</d>
+    <c>最小生成树问题</c>
 
-<answer>4</answer>
+    <d>背包问题</d>
 
-</exercises>
+    <answer>2</answer>
 
--<exercises id="9">
+  </exercises>
 
-<subject>9.威胁世界和平与稳定的主要根源是（ ）。</subject>
 
-<a>霸权主义和强权政治</a>
+  -<exercises id="8">
 
-<b>民族与宗教问题</b>
+    <subject>8.以下不属于贪心算法的是（  ）</subject>
 
-<c>领土和边界争端</c>
+    <a>Prim算法 </a>
 
-<d>恐怖主义活动</d>
+    <b>Kruskal算法</b>
 
-<answer>1</answer>
+    <c>Dijkstra算法</c>
 
-</exercises>
+    <d>深度优先遍历</d>
 
--<exercises id="10">
+    <answer>4</answer>
 
-<subject>10.中国奉行独立自主的和平外交政策，其宗旨是（ ）。</subject>
+  </exercises>
 
-<a>睦邻、富邻、安邻</a>
 
-<b>维护世界和平，促进共同发展</b>
+  -<exercises id="9">
 
-<c>互信、互利、平等和协作</c>
+    <subject>9.背包问题的贪心算法所需的计算时间为（ ）</subject>
 
-<d>建设持久和平与共同繁荣的和谐世界</d>
+    <a>O（n2n）</a>
 
-<answer>2</answer>
+    <b>O（n2n）</b>
 
-</exercises>
+    <c>O（2n）</c>
+
+    <d>O（n）</d>
+
+    <answer>2</answer>
+
+  </exercises>
+
+
+  -<exercises id="10">
+
+    <subject>10.哈弗曼编码的贪心算法所需的计算时间为（ ）。</subject>
+
+    <a>O（n2n）</a>
+
+    <b>O（nlog2n）</b>
+
+    <c>O（2n）</c>
+
+    <d>O（n）</d>
+
+    <answer>2</answer>
+
+  </exercises>
 
 </infos>

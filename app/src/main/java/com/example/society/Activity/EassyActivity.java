@@ -155,7 +155,7 @@ public class EassyActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intentq);
                 break;
             case R.id.im_b:
-                Intent intentb = new Intent(EassyActivity.this,EaxmActivity.class);
+                Intent intentb = new Intent(EassyActivity.this,EaxmStyleActivity.class);
                 intentb.putExtra("username",name);
                 startActivity(intentb);
 

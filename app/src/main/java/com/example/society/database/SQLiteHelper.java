@@ -71,6 +71,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 +  DBinformation.COMMENT_FORUMNAME+" text,"
                 +  DBinformation.COMMENT_CONTENT+" text,"
                 +  DBinformation.COMMENT_TIME+" text)");
+
+        sqLiteDatabase.execSQL("create table if not exists "+DBinformation.DATABASE_PROGRAMMTABLE
+                +" ("+ DBinformation.PROGRAMM_ID+" integer primary key autoincrement,"
+                +  DBinformation.PROGRAMM_AUTHORNAME+" text,"
+                +  DBinformation.PROGRAMM_PRONAME+" text,"
+                +  DBinformation.PROGRAMM_CONTENT+" text,"
+                +  DBinformation.PROGRAMM_TIME+" text)");
     }
 
 
@@ -627,6 +634,100 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             return file;
         }
     }
+
+    public static class Programming {
+
+
+        public Programming() {
+
+        }
+
+        //添加数据
+        public boolean insertData(String programname, String authorname, String content, String time) {
+
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(DBinformation.PROGRAMM_PRONAME, programname);
+            contentValues.put(DBinformation.PROGRAMM_AUTHORNAME, authorname);
+            contentValues.put(DBinformation.PROGRAMM_CONTENT, content);
+            contentValues.put(DBinformation.PROGRAMM_TIME, time);
+            return sqLiteDatabase.insert(DBinformation.DATABASE_PROGRAMMTABLE, null, contentValues) > 0;
+        }
+
+        //删除数据
+        public boolean deleteData(String id) {
+            String sql = DBinformation.PROGRAMM_ID + "=?";
+            String[] contentValuesArray = new String[]{String.valueOf(id)};
+            return sqLiteDatabase.delete(DBinformation.DATABASE_PROGRAMMTABLE, sql, contentValuesArray) > 0;
+        }
+
+        //修改
+        public boolean updateData(String id, String programname, String authorname, String content, String time) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(DBinformation.PROGRAMM_PRONAME, programname);
+            contentValues.put(DBinformation.PROGRAMM_AUTHORNAME, authorname);
+            contentValues.put(DBinformation.PROGRAMM_CONTENT, content);
+            contentValues.put(DBinformation.PROGRAMM_TIME, time);
+            String sql = DBinformation.PROGRAMM_ID + "=?";
+            String[] strings = new String[]{id};
+            return sqLiteDatabase.update(DBinformation.DATABASE_PROGRAMMTABLE, contentValues, sql, strings) > 0;
+        }
+
+        //查询数据
+        public List<com.example.society.Bean.Programming> query() {
+            List<com.example.society.Bean.Programming> list = new ArrayList<com.example.society.Bean.Programming>();
+            Cursor cursor = sqLiteDatabase.query(DBinformation.DATABASE_PROGRAMMTABLE, null, null, null, null, null, DBinformation.PROGRAMM_ID + " desc");
+            if (cursor != null) {
+                while (cursor.moveToNext()) {
+                    com.example.society.Bean.Programming programming = new com.example.society.Bean.Programming();
+                    @SuppressLint("Range") String id = String.valueOf(cursor.getColumnIndex(DBinformation.PROGRAMM_ID));
+                    @SuppressLint("Range") String programmname = cursor.getString(cursor.getColumnIndex(DBinformation.PROGRAMM_PRONAME));
+                    @SuppressLint("Range") String authorname = cursor.getString(cursor.getColumnIndex(DBinformation.PROGRAMM_AUTHORNAME));
+                    @SuppressLint("Range") String content = cursor.getString(cursor.getColumnIndex(DBinformation.PROGRAMM_CONTENT));
+                    @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DBinformation.PROGRAMM_TIME));
+                    programming.setId(id);
+                    programming.setAuthorpro(authorname);
+                    programming.setProname(programmname);
+                    programming.setContent(content);
+                    programming.setTime(time);
+                    list.add(programming);
+                }
+                cursor.close();
+            }
+            return list;
+        }
+
+
+        //查询单个数据
+        public com.example.society.Bean.Programming userquery(String name) {
+            com.example.society.Bean.Programming programming = null;
+            Cursor cursor = sqLiteDatabase.query(DBinformation.DATABASE_PROGRAMMTABLE, null, null, null, null, null, DBinformation.PROGRAMM_ID + " desc");
+            if (cursor != null) {
+                while (cursor.moveToNext()) {
+
+                    @SuppressLint("Range") String programname = cursor.getString(cursor.getColumnIndex(DBinformation.PROGRAMM_PRONAME));
+
+                    if (name.equals(programname)) {
+                        programming = new com.example.society.Bean.Programming();
+                        @SuppressLint("Range") String id = String.valueOf(cursor.getInt(cursor.getColumnIndex(DBinformation.PROGRAMM_ID)));
+                        @SuppressLint("Range") String authorname = cursor.getString(cursor.getColumnIndex(DBinformation.PROGRAMM_AUTHORNAME));
+                        @SuppressLint("Range") String content = cursor.getString(cursor.getColumnIndex(DBinformation.PROGRAMM_CONTENT));
+                        @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DBinformation.PROGRAMM_TIME));
+                        programming.setId(id);
+                        programming.setAuthorpro(authorname);
+                        programming.setProname(programname);
+                        programming.setContent(content);
+                        programming.setTime(time);
+
+                        break;
+                    }
+                }
+                cursor.close();
+            }
+            //Log.i("pwd",loginuser.toString());
+            return programming;
+        }
+    }
+
 
 
 }

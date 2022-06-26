@@ -75,7 +75,7 @@ public class OwnActivity extends AppCompatActivity implements View.OnClickListen
                 startActivity(intentq);
                 break;
             case R.id.im_b:
-                Intent intentb = new Intent(OwnActivity.this,EaxmActivity.class);
+                Intent intentb = new Intent(OwnActivity.this,EaxmStyleActivity.class);
                 intentb.putExtra("username",name);
                 startActivity(intentb);
 

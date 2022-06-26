@@ -5,66 +5,66 @@
 
 -<exercises id="1">
 
-<subject>1.中国特色社会主义文化，就其主要内容来说（ ）。</subject>
+  <subject>1.下面关于背包问题的说法错误的是</subject>
 
-<a>同改革开放以来我们一贯倡导的社会主义精神文明是不一致的</a>
+  <a>Dapp就是去中心化应用的简称，是一种在网络上公开运行的软件应用程序</a>
 
-<b>同改革开放以来我们一贯倡导的社会主义精神文明是一致的</b>
+  <b>Dapp是由许多人维护的，而不是一个组织维护的</b>
 
-<c>就是建设和谐文化</c>
+  <c>对于Dapp，黑客不能改变应用程序的数据，除非他们能够访问几乎所有的网络计算机并在那里调整它</c>
 
-<d>就是发展社会主义先进文化</d>
+  <d> Dapp是一种去中心化的应用简称，并没有什么实际的作用</d>
 
-<answer>2</answer>
+  <answer>1</answer>
 
 </exercises>
 
 
 -<exercises id="2">
 
-<subject>2.建设社会主义先进文化对公民的综合要求是（ ）。</subject>
+  <subject>2.背包问题的代表是？</subject>
 
-<a>培育有理想、有道德、有文化、有纪律的社会主义公民</a>
+  <a>重量</a>
 
-<b>全面提供公民的道德素质</b>
+  <b>价值</b>
 
-<c>全面提高公民的科学文化素质</c>
+  <c>数量</c>
 
-<d>促进人的全面发展</d>
+  <d>单位价值</d>
 
-<answer>1</answer>
+  <answer>2</answer>
 
 </exercises>
 
 
 -<exercises id="3">
 
-<subject>3.对公民的思想道德素质方面的要求是（ ）。</subject>
+<subject>3.以下不属于贪心算法的是（  ）</subject>
 
-<a>有理想,有道德</a>
+<a>Prim算法 </a>
 
-<b>有理想,有道德,有文化,有纪律</b>
+<b>Kruskal算法</b>
 
-<c>有理想,有道德,有纪律</c>
+<c>Dijkstra算法</c>
 
-<d>有理想,有道德,有文化</d>
+<d>深度优先遍历</d>
 
-<answer>3</answer>
+<answer>4</answer>
 
 </exercises>
 
 
 -<exercises id="4">
 
-<subject>4.社会主义核心价值体系的灵魂是（ ）。</subject>
+<subject>4.背包问题的贪心算法所需的计算时间为（ ）</subject>
 
-<a>提高公民的思想道德素质</a>
+<a>O（n2n）</a>
 
-<b>马克思主义指导思想</b>
+<b>O（n2n）</b>
 
-<c>培育“四有”公民 </c>
+<c>O（2n）</c>
 
-<d>树立共同理想</d>
+<d>O（n）</d>
 
 <answer>2</answer>
 
@@ -73,63 +73,64 @@
 
 -<exercises id="5">
 
-<subject>5.培育“四有”公民，要坚持以（ ）为核心。</subject>
+  <subject>5.背包问题是由谁发表的一篇论文而诞生的？</subject>
 
-<a>爱国主义教育</a>
+  <a>徐小平</a>
 
-<b>理想信念教育</b>
+  <b>V神</b>
 
-<c>诚实守信教育</c>
+  <c>中本聪</c>
 
-<d>集体主义教育</d>
+  <d>尼科萨博</d>
 
-<answer>2</answer>
+  <answer>3</answer>
+
 
 </exercises>
 
 -<exercises id="6">
 
-<subject>6.中华民族民族精神的核心是（ ）。</subject>
+<subject>6.一棵哈夫曼树共有215个结点，对其进行哈夫曼编码，共能得到（  ）个不同的码字。</subject>
 
-<a>勤劳勇敢</a>
+<a>107 </a>
 
-<b>艰苦奋斗</b>
+<b>108</b>
 
-<c>自强不息</c>
+<c>214  </c>
 
-<d>爱国主义</d>
+<d>215</d>
 
-<answer>4</answer>
+<answer>2</answer>
 
 </exercises>
 
 -<exercises id="7">
 
-<subject>7.（ ）提出了“八荣八耻”的社会主义荣辱观。</subject>
+<subject>7.采用贪心算法的最优装载问题的主要计算量在于将集装箱依其重量从小到大排序，故算法的时间复杂度为（ ）。</subject>
 
-<a>毛泽东</a>
+<a>O(n)</a>
 
-<b>邓小平</b>
+<b>O(log2n)  </b>
 
-<c>胡锦涛</c>
+<c>O(n3) </c>
 
-<d>江泽民</d>
+<d>O(nlog2n)</d>
 
-<answer>3</answer>
+<answer>4</answer>
 
 </exercises>
 
 -<exercises id="8">
 
-<subject>8.我国加强思想道德建设解决的是（ ）。</subject>
+<subject>8.（ ）是贪心算法的基本要素。</subject>
 
-<a>一些人思想上出现的危机问题</a>
+<a>重叠子问题</a>
 
-<b>整个中华民族的精神支柱问题</b>
+<b>构造最优解     </b>
 
-<c>整个中华民族的精神支柱和精神动力问题</c>
+<c>贪心选择性质  </c>
 
-<d>社会主义荣辱观的问题</d>
+<d>定义最优解</d>
 
 <answer>3</answer>
 
@@ -137,15 +138,15 @@
 
 -<exercises id="9">
 
-<subject>9.（ ）是民族振兴的基石。</subject>
+<subject>9.实现大整数的乘法是利用的算法(   )</subject>
 
-<a>科技</a>
+<a>贪心法</a>
 
-<b>精神</b>
+<b>动态规划法 </b>
 
-<c>教育</c>
+<c>分治策略</c>
 
-<d>物质</d>
+<d>回溯法</d>
 
 <answer>3</answer>
 
@@ -153,17 +154,17 @@
 
 -<exercises id="10">
 
-<subject>10.深化文化体制改革，要坚持以（ ）为重点，在关键环节上实现新突破。</subject>
+  <subject>10.背包问题关于物品重量与物品价值之间的关系，下列哪一项更贴合事实？</subject>
 
-<a>经营理念创新</a>
+  <a>相辅相成</a>
 
-<b>体制机制创新</b>
+  <b>毫无关联</b>
 
-<c>品牌创新</c>
+  <c>物品重量是底层技术，物品价值是应用。</c>
 
-<d>管理创新</d>
+  <d>不确定有什么关系</d>
 
-<answer>2</answer>
+  <answer>3</answer>
 
 </exercises>
 

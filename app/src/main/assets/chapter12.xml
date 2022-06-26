@@ -5,165 +5,165 @@
 
 -<exercises id="1">
 
-<subject>1.实现祖国完全统一的基本方针是（ ）。</subject>
+  <subject>1.关于背包问题以下说法正确的是？</subject>
 
-<a>和平共处五项基本原则</a>
+  <a>单—的新技术</a>
 
-<b>和平统一、一国两制</b>
+  <b>新型加密技术</b>
 
-<c>一国两制</c>
+  <c>绝对安全的存储模式</c>
 
-<d>加快实现台湾海峡两岸的统一大业</d>
+  <d>背包问题中的智能合约非合同</d>
 
-<answer>2</answer>
+  <answer>1</answer>
 
 </exercises>
 
 
 -<exercises id="2">
 
-<subject>2.（ ）是中华民族伟大复兴的重要内容和基本任务。</subject>
+  <subject>2.背包问题是由谁发表的一篇论文而诞生的？</subject>
 
-<a>实现祖国完全统一</a>
+  <a>徐小平</a>
 
-<b>实现社会主义现代化</b>
+  <b>V神</b>
 
-<c>实现全面建设小康社会的宏伟目标</c>
+  <c>中本聪</c>
 
-<d>实现成熟的社会主义</d>
+  <d>尼科萨博</d>
 
-<answer>1</answer>
+  <answer>3</answer>
 
 </exercises>
 
 
 -<exercises id="3">
 
-<subject>3.（ ）是中国国内战争遗留下来的问题。</subject>
+  <subject>3.最大的背包总价值是多少？</subject>
 
-<a>香港问题</a>
+  <a>100</a>
 
-<b>澳门问题</b>
+  <b>25</b>
 
-<c>台湾问题</c>
+  <c>50</c>
 
-<d>南海问题</d>
+  <d>12.5</d>
 
-<answer>3</answer>
+  <answer>4</answer>
 
 </exercises>
 
 
 -<exercises id="4">
 
-<subject>4.“和平统一、一国两制”的核心是（ ）。</subject>
+  <subject>4.如果背包问题没有包含物品价值，最终会怎样？</subject>
 
-<a>实现祖国统一</a>
+  <a>不被确认</a>
 
-<b>采用和平的手段实现祖国统一</b>
+  <b>正确确认速度</b>
 
-<c>一个中国</c>
+  <c>不确定时间，但最终还是会被确认</c>
 
-<d>采用和平手段解决台湾问题</d>
+  <d>24小时内</d>
 
-<answer>3</answer>
-
-</exercises>
-
-
--<exercises id="5">
-
-<subject>5.实现国家统一和解决国际国内问题的基础是（ ）。</subject>
-
-<a>坚持社会主义制度</a>
-
-<b>坚持党的领导</b>
-
-<c>坚持改革开放的方针</c>
-
-<d>集中力量搞好经济建设</d>
-
-<answer>4</answer>
+  <answer>3</answer>
 
 </exercises>
 
--<exercises id="6">
 
-<subject>6.“一国两制”的构想最早是针对（ ）提出来的。</subject>
+  -<exercises id="5">
 
-<a>香港问题</a>
+    <subject>5.哈弗曼编码的贪心算法所需的计算时间为（ ）。</subject>
 
-<b>澳门问题</b>
+    <a>O（n2n）</a>
 
-<c>台湾问题</c>
+    <b>O（nlog2n）</b>
 
-<d>国家统一问题</d>
+    <c>O（2n）</c>
 
-<answer>3</answer>
+    <d>O（n）</d>
 
-</exercises>
+    <answer>2</answer>
 
--<exercises id="7">
+  </exercises>
 
-<subject>7.邓小平是在（ ）提出“主权问题不是一个可以讨论的问题”。</subject>
+  -<exercises id="6">
 
-<a>1982年9月会见英国首相时</a>
+    <subject>6.一棵哈夫曼树共有215个结点，对其进行哈夫曼编码，共能得到（  ）个不同的码字。</subject>
 
-<b>1982年党的十二大开幕式上</b>
+    <a>107 </a>
 
-<c>1981年讨论历史问题决议时</c>
+    <b>108</b>
 
-<d>1984年城市经济体制改革时</d>
+    <c>214  </c>
 
-<answer>1</answer>
+    <d>215</d>
 
-</exercises>
+    <answer>2</answer>
 
--<exercises id="8">
+  </exercises>
 
-<subject>8.著名的“九二共识”是（ ）。</subject>
+  -<exercises id="7">
 
-<a>1992年海峡两岸关系协会与台湾海峡交流基金会达成的统一的协议</a>
+    <subject>7.采用贪心算法的最优装载问题的主要计算量在于将集装箱依其重量从小到大排序，故算法的时间复杂度为（ ）。</subject>
 
-<b>1992年海峡两岸关系协会与台湾海峡交流基金会以口头方式表述的“海峡两岸均坚持一个中国的原则”</b>
+    <a>O(n)</a>
 
-<c>“一国两制”理论的提出</c>
+    <b>O(log2n)  </b>
 
-<d>“和平统一、一国两制”方针的形成</d>
+    <c>O(n3) </c>
 
-<answer>2</answer>
+    <d>O(nlog2n)</d>
 
-</exercises>
+    <answer>4</answer>
 
--<exercises id="9">
+  </exercises>
 
-<subject>9.1995年1月30日，江泽民发表的关于现阶段发展两岸关系、推动祖国和平统一进程的重要讲话是（ ）。</subject>
+  -<exercises id="8">
 
-<a>《告台湾同胞书》</a>
+    <subject>8.（ ）是贪心算法的基本要素。</subject>
 
-<b>《一个国家，两种制度》</b>
+    <a>重叠子问题</a>
 
-<c>《为促进祖国统一大业的完成而继续奋斗》</c>
+    <b>构造最优解     </b>
 
-<d>《坚持一个中国原则，促进祖国统一大业》</d>
+    <c>贪心选择性质  </c>
 
-<answer>3</answer>
+    <d>定义最优解</d>
 
-</exercises>
+    <answer>3</answer>
+
+  </exercises>
+
+  -<exercises id="9">
+
+    <subject>9.背包问题关于物品重量与物品价值之间的关系，下列哪一项更贴合事实？</subject>
+
+    <a>相辅相成</a>
+
+    <b>毫无关联</b>
+
+    <c>物品重量是底层技术，物品价值是应用。</c>
+
+    <d>不确定有什么关系</d>
+
+    <answer>3</answer>
+    
+  </exercises>
 
 -<exercises id="10">
 
-<subject>10.2005年3月（ ）通过了《反分裂国家法》，这部重要法律，将中央关于解决台湾问题的大政方针以法律的形式固定下来。</subject>
+  <subject>10.实现大整数的乘法是利用的算法(   )</subject>
 
-<a>九届全国人大</a>
+  <a>贪心法</a>
 
-<b>十届全国人大</b>
+  <b>动态规划法 </b>
 
-<c>十届全国人大一次会议</c>
+  <c>分治策略</c>
 
-<d>十届全国人大三次会议</d>
+  <d>回溯法</d>
 
-<answer>4</answer>
+  <answer>3</answer>
 
 </exercises>
 

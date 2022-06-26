@@ -151,7 +151,7 @@ public class ForumActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intentq);
                 break;
             case R.id.im_b:
-                Intent intentb = new Intent(ForumActivity.this,EaxmActivity.class);
+                Intent intentb = new Intent(ForumActivity.this,EaxmStyleActivity.class);
                 intentb.putExtra("username",name);
                 startActivity(intentb);
 

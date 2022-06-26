@@ -5,7 +5,7 @@
 
 -<exercises id="1">
 
-<subject>1.下面关于矩阵乘法的 Stranssen 算法，描述错误的是（ ）。。</subject>
+<subject>1.下面关于矩阵乘法的 Stranssen 算法，描述错误的是（ ）。</subject>
 
 <a>对所有可乘的矩阵都适用</a>
 
@@ -33,7 +33,7 @@
 <d>预排序与递归调用</d>
 
 <answer>3</answer>
-
+</exercises>
 
 -<exercises id="3">
 

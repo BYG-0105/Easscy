@@ -19,6 +19,18 @@
         android:theme="@style/Theme.Design.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Activity.ProgramaddActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.ProgramDatilActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.ProgrammingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.EaxmStyleActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.EaxmActivity"
             android:exported="true" />
         <activity

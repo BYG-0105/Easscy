@@ -51,6 +51,13 @@ public class DBinformation {
     public static final String COMMENT_CONTENT = "content";
     public static final String COMMENT_TIME = "time";
 
+    public static final String DATABASE_PROGRAMMTABLE = "Program";
+    public static final String PROGRAMM_ID = "id";
+    public static final String PROGRAMM_PRONAME = "Programname";
+    public static final String PROGRAMM_AUTHORNAME = "Authorname";
+    public static final String PROGRAMM_CONTENT = "content";
+    public static final String PROGRAMM_TIME = "time";
+
     public static final String getTime()
     {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
