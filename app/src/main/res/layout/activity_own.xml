@@ -175,7 +175,7 @@
                     android:layout_height="30dp"
                     android:background="#CBB6CD"
                     android:gravity="left"
-                    android:text="关闭"
+                    android:text="退出登录"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="normal|bold" />

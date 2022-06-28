@@ -58,6 +58,10 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
         }
         initview();
 
+
+        Intent intent = getIntent();
+        String flag = intent.getStringExtra("callogin");
+
         //临时存放密码SharedPreferences
         SharedPreferences sp = getSharedPreferences("userlogin",MODE_PRIVATE);
         String nameinfo = sp.getString("username","");
@@ -79,7 +83,7 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
                 showToast("记住密码失败，请重新输入！！！");
             }
         }
-        if(bauto)
+        if(bauto && flag == null)
         {
             auto.setChecked(true);
             if(!nameinfo.isEmpty() && !pwdinfo.isEmpty())
