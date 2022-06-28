@@ -43,8 +43,13 @@
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_create.xml" value="0.25" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_easssy.xml" value="0.165" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_eassy_mes.xml" value="0.25" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_eaxm.xml" value="0.10778985507246377" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_eaxm_style.xml" value="0.10778985507246377" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_exercises_detail.xml" value="0.10739614994934144" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_file.xml" value="0.10778985507246377" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_file_graze.xml" value="0.10778985507246377" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_file_mange.xml" value="0.11367753623188406" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_filedatil.xml" value="0.10778985507246377" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_forum.xml" value="0.25" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_lt.xml" value="0.335" />
@@ -54,12 +59,17 @@
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_sczy.xml" value="0.165" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_start.xml" value="0.10869565217391304" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/activity_zy.xml" value="0.12635869565217392" />
-        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/eassy_item_layout.xml" value="0.375" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/comment_item.xml" value="0.25" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/eassy_item_layout.xml" value="0.25" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/exercises_detail_list_item.xml" value="0.10739614994934144" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/exercises_list_item.xml" value="0.1" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/file_graze_item.xml" value="0.25" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/file_item.xml" value="0.10778985507246377" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/forum_item_layout.xml" value="0.3194444444444444" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/fragment_exercises.xml" value="0.1" />
         <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/fragment_time.xml" value="0.10739614994934144" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/main_title_bar.xml" value="0.10778985507246377" />
+        <entry key="..\:/2021-2022/YDYY/Society/Easscy/app/src/main/res/layout/program_item.xml" value="0.10778985507246377" />
       </map>
     </option>
   </component>
